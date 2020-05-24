@@ -1,5 +1,5 @@
 <template>
-  <section class="container-full-section items-center">
+  <section id="how-it-works" class="container-full-section nav-section items-center">
     <div class="container mx-auto grid grid-rows-1 p-4 md:px-0">
       <div class="grid grid-cols-12">
         <div class="col-span-12 md:col-span-10 md:col-start-2 grid-rows-2">

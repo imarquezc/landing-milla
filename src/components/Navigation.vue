@@ -1,5 +1,5 @@
 <template>
-  <nav class="md:h-16">
+  <nav id="navigation" class="md:h-16">
     <div class="container h-full mx-auto grid grid-cols-12">
       <div class="md:col-span-2 flex items-center">
         <a href="">
@@ -9,13 +9,8 @@
 
       <div class="md:col-span-8 md:flex">
         <ul>
-          <li class="active">
-            <a href="">
-              Inicio
-              <div></div>
-            </a>
-          </li>
-          <li><a href="">Cómo funciona</a></li>
+          <li class="active"><a href="#main-section">Inicio<div></div></a></li>
+          <li><a href="#how-it-works">Cómo funciona<div></div></a></li>
           <li><a href="">Soporte</a></li>
           <li><a href="">Blog</a></li>
         </ul>
@@ -32,14 +27,45 @@
 
 <script>
 export default {
-  name: 'Navigation'
+  methods: {
+    scrollFunction: function () {
+      const sectionsArray  = document.querySelectorAll('.nav-section')
+      const sectionPos     = {}
+      const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop
+      
+      let id
+      
+      sectionsArray.forEach((section) => sectionPos[section.id] = section.offsetTop)
+
+      for (id in sectionPos) {
+        if (sectionPos[id] <= scrollPosition) {
+          document.querySelector('#navigation .active').classList.remove('active')
+          document.querySelector(`#navigation a[href*=${id}]`).closest('li').classList.add('active')
+        }
+      }
+
+      if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+		    document.getElementById('navigation').classList.add('navbar-stiky')
+		  } else {
+		    document.getElementById('navigation').classList.remove('navbar-stiky')
+		  }
+    }
+  },
+  
+  mounted: function () {
+    window.onload   = () => this.scrollFunction()
+    window.onscroll = () => this.scrollFunction()    
+  }
 }
 </script>
 
 <style scoped>
   nav {
+    @apply sticky top-0 bg-white z-10
+  }
+
+  nav.navbar-stiky {
     box-shadow: 0px 2px 8px rgba(98, 106, 106, 0.08);
-    @apply sticky top-0 bg-white
   }
 
   nav ul {
