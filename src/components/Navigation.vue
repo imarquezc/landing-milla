@@ -73,7 +73,7 @@ export default {
   }
 
   nav ul li {
-    @apply inline-block h-full px-4 ml-2 text-dark-blue opacity-25
+    @apply inline-block h-full px-4 ml-2 text-dark-blue opacity-25 transition duration-300 ease-in
   }
   
   nav ul li.active {
@@ -90,12 +90,11 @@ export default {
 
   nav ul li a div {
     height: 2px;
-    border-radius: 4px 4px 0px 0px;
-    @apply hidden w-full absolute bottom-0 left-0 bg-principal-green
+    @apply opacity-0 w-full absolute bottom-0 left-0 bg-principal-green rounded-t
   }
 
   nav ul li.active a div {
-    @apply block
+    @apply opacity-100
   }
 
   nav .btn-enter {

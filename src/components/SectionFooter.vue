@@ -27,9 +27,9 @@
         </div>
 
         <div class="grid grid-rows-3 row-gap-8 p-2">
-          <a href="">Inicio</a>
-          <a href="">Cómo funciona</a>
-          <a href="">Pregúntale a Milla</a>
+          <a href="#main-section">Inicio</a>
+          <a href="#how-it-works">Cómo funciona</a>
+          <a href="#talk-to-milla">Pregúntale a Milla</a>
         </div>
         <div class="grid grid-rows-3 row-gap-8 p-2">
           <a href="">Blog</a>

@@ -8,7 +8,7 @@
               <h3 class="title text-center">Una herramienta para todo tu equipo</h3>
             </header>
 
-            <div class="grid row-gap-8 md:row-gap-0 md:grid-rows-none md:col-gap-24"
+            <div class="grid row-gap-8 md:row-gap-0 md:grid-rows-none md:col-gap-16"
               :class="[gridRows, gridCols]">
               <article class="card"
                 v-for="(item, index) in items" :key="index">

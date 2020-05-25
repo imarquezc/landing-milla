@@ -34,39 +34,43 @@ export default {
 </script>
 
 <style>
-  * {
-    @apply font-rubik
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  .container-full-section {
-    min-height: calc(100vh - 64px);
-    @apply w-full py-4 flex
-  }
+* {
+  @apply font-rubik
+}
 
+.container-full-section {
+  min-height: calc(100vh - 64px);
+  @apply w-full py-4 flex
+}
+
+header .title {
+  font-size: 32px;
+}
+
+header .subtitle {
+  @apply text-base
+}
+
+.card .card-body .title {
+  @apply text-lg
+}
+
+.card .card-body .subtitle,
+.card .card-body .paragraph {
+  @apply text-base
+}
+
+@media (min-width: 768px) {
   header .title {
-    font-size: 32px;
+    @apply text-4xl
   }
 
   header .subtitle {
-    @apply text-base
-  }
-
-  .card .card-body .title {
     @apply text-lg
   }
-
-  .card .card-body .subtitle,
-  .card .card-body .paragraph {
-    @apply text-base
-  }
-
-  @media (min-width: 768px) {
-    header .title {
-      @apply text-4xl
-    }
-
-    header .subtitle {
-      @apply text-lg
-    }
-  }
+}
 </style>
