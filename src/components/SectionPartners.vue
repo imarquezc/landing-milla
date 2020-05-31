@@ -6,10 +6,10 @@
           <h3 class="text-center text-3xl">Confían en nosotros</h3>
         </header>
 
-        <section class="grid grid-cols-4">
-          <article class="p-4 h-32 flex items-center opacity-50"
+        <section class="md:grid md:grid-cols-4">
+          <article class="p-4 h-24 md:h-32 flex items-center"
             v-for="(item, index) in items" :key="index">
-            <figure class="w-full h-6 flex mx-auto">
+            <figure class="w-full h-12 md:h-6 flex mx-auto">
               <img :src="item.logo" class="max-w-full max-h-full m-auto">
             </figure>
           </article>

@@ -3,20 +3,22 @@
     <div class="container mx-auto grid grid-rows-1 p-4 md:px-0">
       <div class="grid grid-cols-12">
         <div class="col-span-12 md:col-span-10 md:col-start-2">
-          <header class="pb-12">
-            <h3 class="title">Pregúntale a Milla</h3>
-          </header>
-
-          <section class="grid grid-rows-2 row-gap-8 md:grid-rows-none md:row-gap-0 md:grid-cols-2 md:col-span-12">
+          <section class="md:grid md:grid-cols-2 md:col-span-12 text-center md:text-left">
             <article>
-              <header class="mb-16">
+                <header class="pb-12">
+              <h3 class="title">¿Necesitas algo? Te <br> presentamos a Milla</h3>
+            </header>
+
+              <header class="mb-24 md:mb-16">
                 <p class="subtitle mb-8">Milla será la asistente virtual que te ayudará desde el inicio hasta el fin de tu viaje.</p>
-                <p class="subtitle">Recibe tu check-in, cambia tus asientos y rinde tus gastos enviándole tus recibos a su Whatsapp. para que los suba a tu cuenta de gastos.</p>
+                <p class="subtitle">Recibe tu check-in, cambia tus asientos y rinde tus gastos enviando las boletas por chat, para que Milla los suba a tu Dashboard.</p>
               </header>
 
-              <a href="">¡Habla con Milla!</a>
+              <a href="" class="w-full md:w-auto">¡Habla con Milla!</a>
             </article>
-            <article>
+            
+            <article class="hidden md:block">
+              <img :src="require('@/assets/milla/Milla-blanco@2x 1.png')" class="max-h-full mx-auto">
             </article>
           </section>
         </div> 
@@ -26,12 +28,17 @@
 </template>
 
 <style scoped>
-  .container-full-section {
-    background-color: #f8f8f8;
-  }
-  
   a {
-    background: #bce5df;
-    @apply px-4 py-3 rounded-md text-base inline-block text-principal-green
+    @apply px-4 py-3 inline-block bg-principal-green rounded-md text-base text-white font-medium
+  }
+
+  #talk-to-milla {
+    background: #DDF4F3;
+  }
+
+  @media (min-width: 768px) {
+    #talk-to-milla {
+      @apply bg-transparent
+    }
   }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <section id="how-it-works" class="container-full-section nav-section items-center">
+  <section id="how-it-works" class="container-full-section nav-section items-center hidden md:display">
     <div class="container mx-auto grid grid-rows-1 p-4 md:px-0">
       <div class="grid grid-cols-12">
         <div class="col-span-12 md:col-span-10 md:col-start-2 grid-rows-2">
@@ -15,7 +15,7 @@
                 :class="{ 'active': index == active }"
                 @click="!mobile ? changeActiveItem(index) : null">
                 <div class="card-header" :style="{ 'background-image': 'url(' + item.imageSrc + ')' }">
-                  <span class="card-arrow" 
+                  <!-- <span class="card-arrow" 
                     :class="{ invisible: !hasBackItem(index) }"
                     @click="changeActiveItem(index - 1)">
                     <i>a</i>
@@ -25,7 +25,7 @@
                     :class="{ invisible: !hasNextItem(index) }"
                     @click="changeActiveItem(index + 1)">
                     <i>a</i>
-                  </span>
+                  </span> -->
                 </div>
                 
                 <div class="card-body">
@@ -39,7 +39,7 @@
 
             <div class="hidden md:block col-span-3">
               <div class="image-container" 
-                :style="{ 'background-image': 'url(' + activeItem.imageSrc + ')' }"
+                :style="{ 'backgroundImage': `url('${activeItem.imageSrc}')` }"
                 @mouseover="stopTimer()"
                 @mouseleave="initializeTimer()">
               </div>
@@ -63,9 +63,9 @@ export default {
       active: 0,
       timer: null,
       items: [
-        { title: 'Reserva', content: 'Agenda tu viaje en minutos con el mejor inventario.', imageSrc: 'https://ia-latam.com/wp-content/uploads/2019/06/fintech-1-825x500.jpg' },
-        { title: 'Gestiona', content: 'Todo tu equipo en un mismo espacio, guarda su información y documentos.', imageSrc: 'https://www.analyticsinsight.net/wp-content/uploads/2020/01/AdobeStock_118793641-1320x740.jpeg' },
-        { title: 'Reporta', content: 'Visualiza los gastos de tu equipo en tiempo real.', imageSrc: 'https://xponentialworks.com/wp-content/uploads/2019/03/technology.jpg' }
+        { title: 'Reserva', content: 'Agenda tu viaje en minutos con el mejor inventario.', imageSrc: require('@/assets/how_work/img-reserva.png') },
+        { title: 'Gestiona', content: 'Todo tu equipo en un mismo espacio, guarda su información y documentos.', imageSrc: require('@/assets/how_work/gestiona-img.png') },
+        { title: 'Reporta', content: 'Visualiza los gastos de tu equipo en tiempo real.', imageSrc: require('@/assets/how_work/reporta-img.png') }
       ]
     }
   },
@@ -83,7 +83,7 @@ export default {
   methods: {
     initializeTimer () {
       const that         = this
-      const timeInterval = 3000
+      const timeInterval = 5000
 
       if (that.items.length > 1) {
         that.timer = setInterval(() => {
@@ -139,7 +139,7 @@ export default {
 }
 
 .card .card-header {
-  @apply w-full h-64 px-2 flex justify-between items-center rounded-tl-lg rounded-tr-lg bg-center bg-no-repeat bg-cover
+  @apply w-full h-64 px-2 flex justify-between items-center rounded-tl-lg rounded-tr-lg bg-center bg-no-repeat bg-contain
 }
 
 .card .card-header .card-arrow {
@@ -152,12 +152,13 @@ export default {
 }
 
 .card .card-body .title {
-  @apply font-bold mb-3
+  @apply mb-3
 }
 
 /* Medium (md) */
 @media (min-width: 768px) {
   .image-container {
+    box-shadow: 2px 4px 4px rgba(146, 148, 151, 0.12);
     @apply h-full bg-center bg-no-repeat bg-cover
   }
 

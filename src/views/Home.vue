@@ -6,6 +6,7 @@
     <section-how-it-works />
     <section-talk-to-milla />
     <section-partners />
+    <section-suitcases-ready />
     <section-footer />
   </section>
 </template>
@@ -17,6 +18,7 @@ import SectionHowItWorks from '../components/SectionHowItWorks'
 import SectionProductDescription from '../components/SectionProductDescription'
 import SectionTalkToMilla from '../components/SectionTalkToMilla'
 import SectionPartners from '../components/SectionPartners'
+import SectionSuitcasesReady from '../components/SectionSuitcasesReady'
 import SectionFooter from '../components/SectionFooter'
 
 export default {
@@ -28,6 +30,7 @@ export default {
     SectionProductDescription,
     SectionTalkToMilla,
     SectionPartners,
+    SectionSuitcasesReady,
     SectionFooter
   }
 }
@@ -49,6 +52,7 @@ html {
 
 header .title {
   font-size: 32px;
+  @apply leading-snug
 }
 
 header .subtitle {
@@ -56,7 +60,7 @@ header .subtitle {
 }
 
 .card .card-body .title {
-  @apply text-lg
+  @apply text-lg font-medium
 }
 
 .card .card-body .subtitle,
