@@ -1,10 +1,10 @@
 <template>
-  <section id="how-it-works" class="container-full-section nav-section items-center hidden md:display">
+  <section id="how-it-works" class="container-full-section nav-section items-center">
     <div class="container mx-auto grid grid-rows-1 p-4 md:px-0">
       <div class="grid grid-cols-12">
         <div class="col-span-12 md:col-span-10 md:col-start-2 grid-rows-2">
           <header class="pb-12 header-section">
-            <h3 class="title">Cómo funciona</h3>
+            <h3 class="title text-center md:text-left">Cómo funciona</h3>
           </header>
 
           <div class="grid grid-cols-5 col-gap-12">
@@ -126,6 +126,10 @@ export default {
 </script>
 
 <style scoped>
+section {
+  display: none !important;
+}
+
 .card, .image-container {
   @apply rounded-md cursor-pointer
 }
@@ -157,6 +161,9 @@ export default {
 
 /* Medium (md) */
 @media (min-width: 768px) {
+  section {
+    display: block !important;
+  }
   .image-container {
     box-shadow: 2px 4px 4px rgba(146, 148, 151, 0.12);
     @apply h-full bg-center bg-no-repeat bg-cover

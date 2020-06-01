@@ -1,5 +1,5 @@
 <template>
-  <nav id="navigation" class="md:h-16 md:px-0" :class="{ 'menu-mobile': activeNavigation }" :style="{ 'height': activeNavigation ? '667px' : '64px' }">
+  <nav id="navigation" class="md:h-16 md:px-0" :class="{ 'menu-mobile': activeNavigation }" :style="{ 'height': `${navigationHeight}px` }">
     <div class="container h-full mx-auto md:grid md:grid-cols-12">
       <div class="col-span-12 px-4 h-16 md:col-span-2 md:col-start-2 flex items-center justify-between">
         <a href="">
@@ -35,6 +35,9 @@
           <a href="" class="btn-enter bg-light-green text-principal-green md:bg-principal-green md:text-white">
             Ingresa
           </a>
+          
+          <img src="@/assets/icons/logo.png" class="md:hidden h-8 mx-auto mt-8 mb-4">
+          <p class="md:hidden text-sm text-dark-gray">Gestiona los viajes de tu Equipo</p>
         </div>
       </div>
     </div>
@@ -48,6 +51,17 @@ export default {
       activeNavigation: false
     }
   },
+
+  computed: {
+    navigationHeight: function () {
+      if (this.activeNavigation) {
+        return window.innerHeight
+      } else {
+        return 64
+      }
+    }
+  },
+
   methods: {
     scrollFunction: function () {
       const sectionsArray  = document.querySelectorAll('.nav-section')
@@ -67,19 +81,15 @@ export default {
 
       if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
         document.getElementById('navigation').classList.add('navbar-stiky')
-        document.getElementById('main-section').classList.remove('mt-24')
-        document.getElementById('main-section').classList.add('mt-8')
 		  } else {
 		    document.getElementById('navigation').classList.remove('navbar-stiky')
-        document.getElementById('main-section').classList.remove('mt-8')
-        document.getElementById('main-section').classList.add('mt-24')
 		  }
     }
   },
   
   mounted: function () {
     window.onload   = () => this.scrollFunction()
-    window.onscroll = () => this.scrollFunction()    
+    window.onscroll = () => this.scrollFunction()
   }
 }
 </script>
@@ -87,20 +97,23 @@ export default {
 <style scoped>
   nav {
     transition: height 0.25s ease-in-out;
-    @apply absolute w-full top-0 bg-white z-10
+    @apply fixed w-full top-0 bg-white z-10
   }
 
   nav.menu-mobile {
-    @apply absolute top-0 left-0 w-full
+    @apply fixed top-0 left-0 w-full
   }
 
   nav.navbar-stiky {
     box-shadow: 0px 2px 8px rgba(98, 106, 106, 0.08);
-    @apply sticky
   }
 
   nav ul {
-    @apply h-full w-full inline-block mx-auto
+    @apply h-full w-full hidden mx-auto
+  }
+
+  nav.menu-mobile ul {
+    @apply inline-block
   }
 
   nav ul li {
@@ -134,7 +147,7 @@ export default {
 
   @media (min-width: 768px) {
     nav ul {
-      @apply w-auto
+      @apply w-auto block
     }
 
     nav ul li {

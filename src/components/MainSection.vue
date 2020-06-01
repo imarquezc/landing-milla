@@ -1,5 +1,5 @@
 <template>
-  <main id="main-section" class="container-full-section nav-section">
+  <main id="main-section" class="container-full-section nav-section mt-24 md:mt-16">
     <article class="container mx-auto grid grid-cols-12 md:col-gap-16 px-6 md:px-0">
       <div class="col-span-12 md:col-start-2 md:col-span-5 md:mt-20 text-center md:text-left">
         <h1 class="mb-4 md:mb-6 text-dark-blue leading-tight md:leading-snug text-3xl md:text-4xl">Gestiona los viajes <br class="md:hidden"> de tu equipo de <br class="md:hidden"> forma simple</h1>
