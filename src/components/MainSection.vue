@@ -1,5 +1,5 @@
 <template>
-  <main id="main-section" class="container-full-section nav-section mt-10 md:mt-0">
+  <main id="main-section" class="container-full-section nav-section">
     <article class="container mx-auto grid grid-cols-12 md:col-gap-16 px-6 md:px-0">
       <div class="col-span-12 md:col-start-2 md:col-span-5 md:mt-20 text-center md:text-left">
         <h1 class="mb-4 md:mb-6 text-dark-blue leading-tight md:leading-snug text-3xl md:text-4xl">Gestiona los viajes <br class="md:hidden"> de tu equipo de <br class="md:hidden"> forma simple</h1>
@@ -11,7 +11,8 @@
           </div>
         </div>
       </div>
-      <div class="hidden md:block col-span-12 md:col-span-6">
+      <div class="hidden col-span-12 md:col-span-6 md:flex md:items-end md:justify-end">
+        <img src="@/assets/main.png" class="max-w-full max-h-full">
       </div>
     </article>
   </main>

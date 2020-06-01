@@ -1,5 +1,5 @@
 <template>
-  <nav id="navigation" class="md:h-16 md:px-0 bg-white" :class="{ 'h-screen': activeNavigation }">
+  <nav id="navigation" class="md:h-16 md:px-0" :class="{ 'menu-mobile': activeNavigation }" :style="{ 'height': activeNavigation ? '667px' : '64px' }">
     <div class="container h-full mx-auto md:grid md:grid-cols-12">
       <div class="col-span-12 px-4 h-16 md:col-span-2 md:col-start-2 flex items-center justify-between">
         <a href="">
@@ -11,9 +11,9 @@
         </a>
       </div>
 
-      <div class="col-span-12 md:col-span-6 md:flex"
-        :class="{ 'hidden': !activeNavigation }">
-        <ul>
+      <div class="col-span-12 md:col-span-6 md:flex transition-opacity ease-in"
+        :class="[activeNavigation ? 'duration-200 delay-200' : 'duration-100 opacity-0 md:opacity-100']">
+        <ul :class="{ 'hidden': !activeNavigation }">
           <li class="active"><a href="#main-section">Inicio<div></div></a></li>
           <li><a href="#how-it-works">Cómo funciona<div></div></a></li>
           <li><a href="">Soporte</a></li>
@@ -21,10 +21,11 @@
         </ul>
       </div>
       
-      <div class="col-span-12 md:col-span-2 md:block"
-        :class="{ 'hidden': !activeNavigation }">
+      <div class="col-span-12 md:col-span-2 md:block transition-opacity ease-in"
+        :class="[activeNavigation ? 'duration-150 delay-200' : 'duration-100 opacity-0 md:opacity-100']">
 
-        <div class="px-8 md:px-0 md:flex md:items-center md:justify-end md:h-full text-center">
+        <div class="px-8 md:px-0 md:flex md:items-center md:justify-end md:h-full text-center" 
+          :class="{ 'hidden': !activeNavigation }">
           <div class="md:hidden">
             <a href="" class="btn-enter btn-create-account mt-8 mb-4 bg-principal-green text-white">
               Crear cuenta
@@ -65,9 +66,13 @@ export default {
       }
 
       if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
-		    document.getElementById('navigation').classList.add('navbar-stiky')
+        document.getElementById('navigation').classList.add('navbar-stiky')
+        document.getElementById('main-section').classList.remove('mt-24')
+        document.getElementById('main-section').classList.add('mt-8')
 		  } else {
 		    document.getElementById('navigation').classList.remove('navbar-stiky')
+        document.getElementById('main-section').classList.remove('mt-8')
+        document.getElementById('main-section').classList.add('mt-24')
 		  }
     }
   },
@@ -81,11 +86,17 @@ export default {
 
 <style scoped>
   nav {
-    @apply sticky top-0 bg-white z-10
+    transition: height 0.25s ease-in-out;
+    @apply absolute w-full top-0 bg-white z-10
+  }
+
+  nav.menu-mobile {
+    @apply absolute top-0 left-0 w-full
   }
 
   nav.navbar-stiky {
     box-shadow: 0px 2px 8px rgba(98, 106, 106, 0.08);
+    @apply sticky
   }
 
   nav ul {

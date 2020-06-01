@@ -9,7 +9,8 @@
   input {
     border: 1px solid #00BFA5;
     letter-spacing: 0.2px;
-    @apply block w-full py-2 px-4 appearance-none rounded-md box-border transition duration-200 ease-in text-mid-gray
+    padding: 11px 0;
+    @apply block w-full px-4 appearance-none rounded-md box-border transition duration-200 ease-in text-mid-gray
   }
 
   input:focus {
