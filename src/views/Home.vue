@@ -56,11 +56,11 @@ header .title {
 }
 
 header .subtitle {
-  @apply text-base
+  @apply text-base font-normal
 }
 
 .card .card-body .title {
-  @apply text-lg font-medium
+  @apply text-lg font-normal
 }
 
 .card .card-body .subtitle,

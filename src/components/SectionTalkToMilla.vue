@@ -5,9 +5,9 @@
         <div class="col-span-12 md:col-span-10 md:col-start-2">
           <section class="md:grid md:grid-cols-2 md:col-span-12 text-center md:text-left">
             <article>
-                <header class="pb-12">
-              <h3 class="title text-dark-blue">¿Necesitas algo? Te <br> presentamos a Milla</h3>
-            </header>
+              <header class="pb-12">
+                <h3 class="title text-dark-blue font-normal">¿Necesitas algo? Te <br> presentamos a Milla</h3>
+              </header>
 
               <header class="md:mb-16">
                 <p class="subtitle mb-8">Milla será la asistente virtual que te ayudará desde el inicio hasta el fin de tu viaje.</p>
