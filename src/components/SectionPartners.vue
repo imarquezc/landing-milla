@@ -3,7 +3,7 @@
     <div class="container mx-auto grid grid-cols-12">
       <div class="col-span-12 md:col-span-10 md:col-start-2">
         <header class="pb-16 text-center">
-          <h3 class="text-center text-3xl">Confían en nosotros</h3>
+          <h3 class="text-center text-3xl text-dark-blue">Confían en nosotros</h3>
         </header>
 
         <section class="md:grid md:grid-cols-4">

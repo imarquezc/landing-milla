@@ -11,9 +11,6 @@
           </div>
         </div>
       </div>
-      <div class="hidden col-span-12 md:col-span-6 md:flex md:items-end md:justify-end">
-        <img src="@/assets/main.png" class="max-w-full max-h-full">
-      </div>
     </article>
   </main>
 </template>

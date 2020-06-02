@@ -2,7 +2,7 @@
   <section class="border-b border-opacity-50 border-light-gray">
     <div class="md:relative container h-full mx-auto grid grid-cols-12 md:col-gap-16">
       <header class="col-span-12 pb-12 header-section text-center flex justify-center items-end">
-        <h3 class="title text-center">¿Están listas tus maletas?</h3>
+        <h3 class="title text-center text-dark-blue">¿Están listas tus maletas?</h3>
       </header>
 
       <div class="col-span-10 col-start-2 md:col-span-4 md:col-start-5">

@@ -1,10 +1,10 @@
 <template>
   <section id="how-it-works" class="container-full-section nav-section items-center">
-    <div class="container mx-auto grid grid-rows-1 p-4 md:px-0">
+    <div class="container mx-auto grid grid-rows-1 p-4 md:p-0">
       <div class="grid grid-cols-12">
         <div class="col-span-12 md:col-span-10 md:col-start-2 grid-rows-2">
           <header class="pb-12 header-section">
-            <h3 class="title text-center md:text-left">Cómo funciona</h3>
+            <h3 class="title text-center md:text-left text-dark-blue">Cómo funciona</h3>
           </header>
 
           <div class="grid grid-cols-5 col-gap-12">
@@ -39,9 +39,10 @@
 
             <div class="hidden md:block col-span-3">
               <div class="image-container" 
-                :style="{ 'backgroundImage': `url('${activeItem.imageSrc}')` }"
                 @mouseover="stopTimer()"
                 @mouseleave="initializeTimer()">
+                <video id="video" autoplay loop class="mx-auto" :src="activeItem.imageSrc" type="video/mp4">
+                </video>
               </div>
             </div>
           </div>
@@ -63,9 +64,9 @@ export default {
       active: 0,
       timer: null,
       items: [
-        { title: 'Reserva', content: 'Agenda tu viaje en minutos con el mejor inventario.', imageSrc: require('@/assets/how_work/img-reserva.png') },
-        { title: 'Gestiona', content: 'Todo tu equipo en un mismo espacio, guarda su información y documentos.', imageSrc: require('@/assets/how_work/gestiona-img.png') },
-        { title: 'Reporta', content: 'Visualiza los gastos de tu equipo en tiempo real.', imageSrc: require('@/assets/how_work/reporta-img.png') }
+        { title: 'Reserva', content: 'Agenda tu viaje en minutos con el mejor inventario.', imageSrc: require('@/assets/how_work/Reserva.mp4') },
+        { title: 'Gestiona', content: 'Todo tu equipo en un mismo espacio, guarda su información y documentos.', imageSrc: require('@/assets/how_work/Gestiona.mp4') },
+        { title: 'Reporta', content: 'Visualiza los gastos de tu equipo en tiempo real.', imageSrc: require('@/assets/how_work/Reporta.mp4') }
       ]
     }
   },
@@ -83,11 +84,15 @@ export default {
   methods: {
     initializeTimer () {
       const that         = this
-      const timeInterval = 5000
+      const timeInterval = 10000
+      const video        = document.getElementById('video')
 
       if (that.items.length > 1) {
         that.timer = setInterval(() => {
+          video.pause()
           that.active = that.active >= that.items.length - 1 ? 0 : that.active + 1
+          video.load()
+          video.play()
         }, timeInterval)
       }
     },
@@ -164,9 +169,15 @@ section {
   section {
     display: block !important;
   }
+
   .image-container {
-    box-shadow: 2px 4px 4px rgba(146, 148, 151, 0.12);
+    /*box-shadow: 2px 4px 4px rgba(146, 148, 151, 0.12);*/
     @apply h-full bg-center bg-no-repeat bg-cover
+  }
+
+  .image-container video {
+    box-shadow: 2px 4px 4px rgba(146, 148, 151, 0.12);
+    @apply rounded-md max-w-full max-h-full
   }
 
   .card {
