@@ -41,6 +41,7 @@
 
   #bg-container div {
 	  border-bottom-right-radius: 300px;
+    height: 376px;
     @apply w-full bg-white
   }
 
