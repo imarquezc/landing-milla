@@ -10,9 +10,9 @@
           <p class="py-4 ptb-20px">Gestiona los viajes de tu equipo</p>
 
           <ul class="list-social-media">
-            <li><a href=""><img src="@/assets/social_media/facebook.png"></a></li>
-            <li><a href=""><img src="@/assets/social_media/instagram.png"></a></li>
-            <li><a href=""><img src="@/assets/social_media/linkedin.png"></a></li>
+            <!-- <li><a href=""><img src="@/assets/social_media/facebook.png"></a></li> -->
+            <!-- <li><a href=""><img src="@/assets/social_media/instagram.png"></a></li> -->
+            <li><a href="https://www.linkedin.com/company/millatravel/"><img src="@/assets/social_media/linkedin.png"></a></li>
             <li><a href=""><img src="@/assets/social_media/twitter.png"></a></li>
           </ul>
         </div>
@@ -23,9 +23,9 @@
           <a href="#talk-to-milla">Pregúntale a Milla</a>
         </div>
         <div class="links-container text-center md:text-left">
-          <a href="">Blog</a>
-          <a href="">Términos y Privacidad</a>
-          <a href="">Pruébalo Gratis</a>
+          <!-- <a href="">Blog</a> -->
+          <a :href="require('path').resolve('static/terms/tyc.pdf')" target="_blank">Términos y Privacidad</a>
+          <a href="https://app.milla.travel/#/onboarding">Pruébalo Gratis</a>
         </div>
       </div>
     </div>
