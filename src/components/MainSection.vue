@@ -1,6 +1,6 @@
 <template>
-  <main id="main-section" class="container-full-section nav-section mt-16">
-    <article class="container mx-auto grid grid-cols-12 md:col-gap-16 px-6 md:px-0" :style="{'background-image': 'url('+ require('@/assets/milla/hero.png') + ')'}">
+  <main id="main-section" class="container-full-section nav-section mt-16 relative">
+    <article class="container mx-auto grid grid-cols-12 md:col-gap-16 px-6 md:px-0">
       <div class="col-span-12 md:col-start-2 md:col-span-5 text-center md:text-left flex items-center content-center">
         <div>
           <h1 class="mb-4 md:mb-6 text-dark-blue leading-tight md:leading-normal text-3xl md:text-4xl">Gestiona los viajes <br class="md:hidden"> de tu equipo de <br class="md:hidden"> forma simple</h1>
@@ -14,24 +14,54 @@
         </div>
       </div>
     </article>
+    <div class="hidden md:block absolute bottom-0 right-0 h-full w-full" ref="lavContainer">
+    </div>
   </main>
 </template>
 
 <script>
+import lottie from 'lottie-web';
 import EmailInput from './EmailInput'
+
+import * as animationData from '@/assets/hero/data.json'
 
 export default {
   components:{
     EmailInput
+  },
+
+  methods: {
+    loadSVG () {
+      const path = require('path')
+
+      fetch( path.resolve('static/hero/data.json') ).then( resp => resp.json() ).then( json => { 
+        console.log(json)
+
+        json.assets.filter(asset => asset.id.includes('image')).forEach((asset, index) => {
+          json.assets[index].u = path.resolve('static/hero/images/') + '/'
+        })
+
+        const animation = lottie.loadAnimation({
+          container: this.$refs.lavContainer,
+          renderer: 'svg',
+          loop: true,
+          autoplay: false,
+          animationData: json
+        })
+
+        animation.play()
+      })
+      
+    }
+  },
+
+  mounted: function () {
+    this.loadSVG()
   }
 }
 </script>
 
 <style scoped>
-  article {
-    @apply bg-right-bottom bg-no-repeat bg-cover
-  }
-
   h1 {
     letter-spacing: 0.2px;
   }
@@ -39,11 +69,5 @@ export default {
   h2 {
     letter-spacing: 0.4px;
     line-height: 26px;
-  }
-
-  @media (max-width: 767px) {
-    article {
-      background: none !important;
-    }
   }
 </style>
