@@ -9,9 +9,17 @@
                 <h3 class="title text-dark-blue font-normal">¿Necesitas algo? Te <br> presentamos a Milla</h3>
               </header>
 
-              <header class="md:mb-16">
-                <p class="subtitle mb-8">Milla será la asistente virtual que te ayudará desde el inicio hasta el fin de tu viaje.</p>
-                <p class="subtitle">Recibe tu check-in, cambia tus asientos y rinde tus gastos enviando las boletas por chat, para que Milla los suba a tu Dashboard.</p>
+              <header class="md:mb-16 text-dark-gray">
+                <p class="subtitle mb-8">
+                  Milla será la asistente virtual y te ayudará <br class="hidden md:block"> 
+                  desde el inicio hasta el fin de tu viaje.
+                </p>
+
+                <p class="subtitle">
+                  Recibe tu check-in, cambia tus asientos <br class="hidden md:block">
+                  y rinde tus gastos enviando las boletas <br class="hidden md:block">
+                  por chat, para que Milla los suba a tu Cuenta.
+                </p>
               </header>
 
               <img class="max-h-full mx-auto my-10 md:hidden" :src="require('@/assets/milla/Milla-blanco@2x 1.png')">
@@ -30,7 +38,23 @@
 </template>
 
 <style scoped>
+header h3 {
+  line-height: 48px;
+  letter-spacing: 0.4px;
+}
+
+header p {
+  line-height: 28px;
+  letter-spacing: 0.4px;
+}
+
+a {
+  @apply px-4 py-3 inline-block bg-principal-green rounded-md text-base text-white font-medium text-center
+}
+
+@media (min-width: 768px) {
   a {
-    @apply px-4 py-3 inline-block bg-principal-green rounded-md text-base text-white font-medium
+    width: 169px;
   }
+}
 </style>

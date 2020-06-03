@@ -52,7 +52,6 @@ html {
 
 header .title {
   font-size: 32px;
-  @apply leading-snug
 }
 
 header .subtitle {

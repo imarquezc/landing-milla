@@ -1,7 +1,7 @@
 <template>
   <div class="w-full">
-    <input class="mb-6 md:mb-4" type="email" placeholder="Ingresa tu correo">
-    <a href="">¡Pruebalo Gratis!</a>
+    <input class="mb-6 md:mb-4" type="email" placeholder="Nombre de tu equipo">
+    <a href="">¡Pruébalo Gratis!</a>
   </div>
 </template>
 

@@ -3,7 +3,7 @@
     <div class="container h-full mx-auto md:grid md:grid-cols-12">
       <div class="col-span-12 px-4 h-16 md:col-span-2 md:col-start-2 flex items-center justify-between">
         <a href="">
-          <img src="@/assets/logo.png" class="h-8">
+          <img src="@/assets/logo.png">
         </a>
 
         <a @click="activeNavigation = !activeNavigation" class="md:hidden">
@@ -151,7 +151,8 @@ export default {
     }
 
     nav ul li {
-      @apply inline-block h-full border-b-0 opacity-25 py-0 ml-2
+      opacity: 0.72;
+      @apply inline-block h-full border-b-0 py-0 ml-2
     }
 
     nav ul li a {
@@ -171,6 +172,7 @@ export default {
     }
 
     nav .btn-enter {
+      font-size: 14px;
       box-shadow: 0px 6px 16px rgba(25, 168, 164, 0.16);
       @apply h-8
     }

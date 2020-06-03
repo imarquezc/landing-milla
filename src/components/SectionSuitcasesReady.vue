@@ -7,10 +7,12 @@
 
       <div class="col-span-10 col-start-2 md:col-span-4 md:col-start-5">
         <email-input />
-        <p class="mt-4 text-center text-sm md:text-base text-dark-gray tracking-wide">Sin tarjetas · Cancela en cualquier momento</p>
+        <p class="mt-4 text-center text-sm md:text-base text-dark-gray tracking-wide">
+          Sin tarjetas · Sin costos escondidos
+        </p>
       </div>
 
-      <img :src="require('@/assets/icons/Maleta.png')" class="hidden md:visible absolute right-0">
+      <img :src="require('@/assets/icons/Maleta.png')" class="hidden md:block absolute right-0">
     </div>
   </section>
 </template>

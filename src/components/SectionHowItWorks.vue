@@ -1,5 +1,5 @@
 <template>
-  <section id="how-it-works" class="container-full-section nav-section items-center">
+  <section id="how-it-works" class="container-full-section items-center">
     <div class="container mx-auto grid grid-rows-1 p-4 md:p-0">
       <div class="grid grid-cols-12">
         <div class="col-span-12 md:col-span-10 md:col-start-2 grid-rows-2">
@@ -135,6 +135,10 @@ section {
   display: none !important;
 }
 
+header h3 {
+  line-height: 48px;
+}
+
 .card, .image-container {
   @apply rounded-md cursor-pointer
 }
@@ -157,6 +161,7 @@ section {
 }
 
 .card .card-body {
+  letter-spacing: 0.4px;
   @apply px-6 py-5
 }
 
@@ -164,10 +169,18 @@ section {
   @apply mb-3
 }
 
+.card.active .card-body .title {
+  @apply text-dark-blue
+}
+
+.card.active .card-body .paragraph {
+  @apply text-dark-gray
+}
+
 /* Medium (md) */
 @media (min-width: 768px) {
   section {
-    display: block !important;
+    display: flex !important;
   }
 
   .image-container {

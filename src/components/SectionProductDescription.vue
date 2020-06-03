@@ -53,6 +53,11 @@ export default {
 </script>
 
 <style scoped>
+header h3 {
+  letter-spacing: 0.4px;
+  line-height: 48px;
+}
+
 .card {
   @apply text-center
 }
@@ -61,7 +66,13 @@ export default {
   @apply w-full h-64 px-2 mb-4 rounded-lg bg-center bg-no-repeat bg-contain
 }
 
+.card .card-body .title,
+.card .card-body .paragraph {
+  letter-spacing: 0.2px;
+}
+
 .card .card-body .title {
+  line-height: 24px;
   @apply mb-4 text-dark-blue
 }
 
