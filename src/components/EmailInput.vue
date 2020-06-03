@@ -1,9 +1,19 @@
 <template>
   <div class="w-full">
-    <input class="" type="email" placeholder="Nombre de tu equipo">
-    <a href="">¡Pruébalo Gratis!</a>
+    <input class="" v-model="teamName" type="text" placeholder="Nombre de tu equipo">
+    <a :href="`https://app.milla.travel/#/onboarding?companyName=${teamName}`">¡Pruébalo Gratis!</a>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      teamName: null,
+    }
+  }
+}
+</script>
 
 <style scoped>
   input {

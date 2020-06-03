@@ -16,8 +16,8 @@
         <ul :class="{ 'hidden': !activeNavigation }">
           <li class="active"><a href="#main-section">Inicio<div></div></a></li>
           <li><a href="#how-it-works">Cómo funciona<div></div></a></li>
-          <li><a href="">Soporte</a></li>
-          <li><a href="">Blog</a></li>
+          <li><a href="#" @click="openChat()">Soporte</a></li>
+          <!-- <li><a href="">Blog</a></li> -->
         </ul>
       </div>
       
@@ -27,12 +27,12 @@
         <div class="px-8 md:px-0 md:flex md:items-center md:justify-end md:h-full text-center" 
           :class="{ 'hidden': !activeNavigation }">
           <div class="md:hidden">
-            <a href="" class="btn-enter btn-create-account mt-8 mb-4 bg-principal-green text-white">
+            <a href="https://app.milla.travel/#/register" class="btn-enter btn-create-account mt-8 mb-4 bg-principal-green text-white">
               Crear cuenta
             </a>
           </div>
 
-          <a href="" class="btn-enter bg-light-green text-principal-green md:bg-principal-green md:text-white">
+          <a href="https://app.milla.travel/#/login" class="btn-enter bg-light-green text-principal-green md:bg-principal-green md:text-white">
             Ingresa
           </a>
           
@@ -63,6 +63,9 @@ export default {
   },
 
   methods: {
+    openChat: function () {
+      window.Intercom('show');
+    },
     scrollFunction: function () {
       const sectionsArray  = document.querySelectorAll('.nav-section')
       const sectionPos     = {}

@@ -24,7 +24,7 @@
 
               <img class="max-h-full mx-auto my-10 md:hidden" :src="require('@/assets/milla/Milla-blanco@2x 1.png')">
 
-              <a href="" class="w-full md:w-auto">¡Habla con Milla!</a>
+              <a href="#talk-to-milla" @click="openChat()" class="w-full md:w-auto">¡Habla con Milla!</a>
             </article>
             
             <article class="hidden md:block">
@@ -36,6 +36,16 @@
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  methods: {
+    openChat: function () {
+      window.Intercom('show');
+    },
+  }
+}
+</script>
 
 <style scoped>
 header h3 {
