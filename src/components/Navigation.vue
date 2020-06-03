@@ -14,9 +14,9 @@
       <div class="col-span-12 md:col-span-6 md:flex transition-opacity ease-in"
         :class="[activeNavigation ? 'duration-200 delay-200' : 'duration-100 opacity-0 md:opacity-100']">
         <ul :class="{ 'hidden': !activeNavigation }">
-          <li class="active"><a href="#main-section">Inicio<div></div></a></li>
-          <li><a href="#how-it-works">Cómo funciona<div></div></a></li>
-          <li><a @click="openChat()">Soporte</a></li>
+          <li @click="closeNav()" class="active"><a href="#main-section">Inicio<div></div></a></li>
+          <li @click="closeNav()" ><a href="#how-it-works">Cómo funciona<div></div></a></li>
+          <li @click="closeNav()" ><a @click="openChat()">Soporte</a></li>
           <!-- <li><a href="">Blog</a></li> -->
         </ul>
       </div>
@@ -66,7 +66,9 @@ export default {
     openChat: function () {
       window.Intercom('show')
     },
-
+    closeNav() {
+      this.activeNavigation = false;
+    },
     scrollFunction: function () {
       const sectionsArray  = document.querySelectorAll('.nav-section')
       const sectionPos     = {}
