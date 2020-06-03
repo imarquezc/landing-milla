@@ -5,7 +5,7 @@
     </div>
     <article class="container mx-auto grid grid-cols-12 md:col-gap-16 px-6 md:px-0 z-50">
       <div class="col-span-12 md:col-start-2 md:col-span-5 text-center md:text-left flex items-center content-center">
-        <div class="mx-auto md:mx-0">
+        <div class="mx-auto md:mx-0 max-w-full">
           <h1 class="mb-4 md:mb-6 text-dark-blue leading-tight md:leading-normal text-3xl md:text-4xl">Gestiona los viajes <br class="md:hidden"> de tu equipo de <br class="md:hidden"> forma simple</h1>
           <h2 class="mb-12 md:mb-8 text-lg text-dark-gray">Reserva viajes, guarda sus documentos <br class="hidden md:block"> y analiza gastos.</h2>
 
