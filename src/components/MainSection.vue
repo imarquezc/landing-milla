@@ -74,9 +74,4 @@ export default {
     letter-spacing: 0.4px;
     line-height: 26px;
   }
-
-  #svg-container div {
-    height: 736px !important;
-    width: 1336px !important;
-  }
 </style>
