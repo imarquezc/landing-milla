@@ -41,7 +41,7 @@
 
   #bg-container div {
 	  border-bottom-right-radius: 300px;
-    @apply h-full w-full bg-white
+    @apply w-full bg-white
   }
 
   .col-span-12 {
