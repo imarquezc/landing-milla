@@ -55,7 +55,8 @@ export default {
 <style scoped>
 header h3 {
   letter-spacing: 0.4px;
-  line-height: 48px;
+  line-height: 44px;
+  font-size: 31px;
 }
 
 .card {
@@ -79,4 +80,12 @@ header h3 {
 .card .card-body .paragraph {
   @apply text-dark-gray
 }
+
+  @media (min-width: 768px) {
+    header h3 {
+      letter-spacing: 0.4px;
+      line-height: 48px;
+      font-size: 32px;
+    }
+  }
 </style>

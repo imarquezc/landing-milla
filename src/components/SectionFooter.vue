@@ -70,6 +70,11 @@
     @apply block
   }
 
+  p.ptb-20px {
+    letter-spacing: 0.4px;
+    padding-bottom: 32px;
+  }
+
   @media (min-width: 768px) {
     footer {
       height: 376px;
@@ -101,7 +106,7 @@
       @apply h-6
     }
 
-    .ptb-20px {
+    p.ptb-20px {
       padding-top: 20px;
       padding-bottom: 20px;
     }

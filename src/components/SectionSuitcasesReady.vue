@@ -67,7 +67,7 @@ export default {
     }
 
     p {
-      @apply mt-4
+      margin-top: 14px;
     }
   }
 </style>

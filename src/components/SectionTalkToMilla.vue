@@ -39,7 +39,7 @@
 
 <style scoped>
 header h3 {
-  line-height: 48px;
+  line-height: 40px;
   letter-spacing: 0.4px;
 }
 
@@ -56,6 +56,10 @@ a {
 }
 
 @media (min-width: 768px) {
+  header h3 {
+    line-height: 48px;
+  }
+
   a {
     width: 169px;
     @apply text-base
