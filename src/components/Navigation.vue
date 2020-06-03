@@ -152,7 +152,8 @@ export default {
 
     nav ul li {
       opacity: 0.72;
-      @apply inline-block h-full border-b-0 py-0 ml-2
+      margin-left: 44px;
+      @apply inline-block h-full border-b-0 p-0
     }
 
     nav ul li a {
