@@ -1,9 +1,11 @@
 <template>
   <main id="main-section" class="container-full-section nav-section mt-16 relative">
-    <div id="svg-container" class="hidden md:block absolute bottom-0 right-0 overflow-hidden" ref="lavContainer"></div>
+    <div id="svg-container" class="hidden md:flex absolute bottom-0 overflow-hidden w-full h-full items-center content-end z-10">
+      <div class="mx-auto" ref="lavContainer"></div>
+    </div>
     <article class="container mx-auto grid grid-cols-12 md:col-gap-16 px-6 md:px-0 z-50">
       <div class="col-span-12 md:col-start-2 md:col-span-5 text-center md:text-left flex items-center content-center">
-        <div>
+        <div class="mx-auto md:mx-0">
           <h1 class="mb-4 md:mb-6 text-dark-blue leading-tight md:leading-normal text-3xl md:text-4xl">Gestiona los viajes <br class="md:hidden"> de tu equipo de <br class="md:hidden"> forma simple</h1>
           <h2 class="mb-12 md:mb-8 text-lg text-dark-gray">Reserva viajes, guarda sus documentos <br class="hidden md:block"> y analiza gastos.</h2>
 
@@ -73,7 +75,7 @@ export default {
     line-height: 26px;
   }
 
-  #svg-container { 
+  #svg-container div {
     height: 736px !important;
     width: 1336px !important;
   }

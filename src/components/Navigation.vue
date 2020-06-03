@@ -32,7 +32,7 @@
             </a>
           </div>
 
-          <a href="https://app.milla.travel/#/login" class="btn-enter bg-light-green text-principal-green md:bg-principal-green md:text-white">
+          <a href="https://app.milla.travel/#/login" class="btn-enter bg-light-green text-principal-green md:bg-principal-green md:text-white text-sm">
             Ingresa
           </a>
           
@@ -144,7 +144,7 @@ export default {
 
   nav .btn-enter {
     border-radius: 6px;
-    @apply h-12 flex justify-center items-center px-6 font-medium tracking-wide leading-tight text-base
+    @apply h-12 flex justify-center items-center px-6 tracking-wide leading-tight text-base
   }
 
   nav .btn-create-account {
