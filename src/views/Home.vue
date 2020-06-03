@@ -55,7 +55,8 @@ header .title {
 }
 
 header .subtitle {
-  @apply text-base font-normal
+  font-size: 17px;
+  @apply font-normal
 }
 
 .card .card-body .title {

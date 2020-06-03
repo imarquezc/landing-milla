@@ -11,14 +11,14 @@
 
               <header class="md:mb-16 text-dark-gray">
                 <p class="subtitle mb-8">
-                  Milla será la asistente virtual y te ayudará <br class="hidden md:block"> 
-                  desde el inicio hasta el fin de tu viaje.
+                  Milla será la asistente virtual <br class="md:hidden"> y te ayudará <br class="hidden md:block"> 
+                  desde el inicio hasta <br class="md:hidden"> el fin de tu viaje.
                 </p>
 
                 <p class="subtitle">
-                  Recibe tu check-in, cambia tus asientos <br class="hidden md:block">
-                  y rinde tus gastos enviando las boletas <br class="hidden md:block">
-                  por chat, para que Milla los suba a tu Cuenta.
+                  Recibe tu check-in, cambia tus <br class="md:hidden"> asientos <br class="hidden md:block">
+                  y rinde tus gastos enviando <br class="md:hidden"> las boletas <br class="hidden md:block">
+                  por chat, para que Milla <br class="md:hidden"> los suba a tu Cuenta.
                 </p>
               </header>
 
@@ -49,12 +49,16 @@ header p {
 }
 
 a {
-  @apply px-4 py-3 inline-block bg-principal-green rounded-md text-base text-white font-medium text-center
+  letter-spacing: 0.4px;
+  font-size: 15px;
+  height: 48px;
+  @apply flex justify-center items-center px-4 bg-principal-green rounded-md text-white font-medium text-center
 }
 
 @media (min-width: 768px) {
   a {
     width: 169px;
+    @apply text-base
   }
 }
 </style>

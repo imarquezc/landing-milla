@@ -4,15 +4,15 @@
       <div class="grid grid-cols-12">
         <div class="col-span-12 md:col-span-10 md:col-start-2">
           <div class="col-span-12 md:col-span-10 md:col-start-2 grid-rows-2">
-            <header class="pb-16">
-              <h3 class="title text-center text-dark-blue">Una herramienta <br class="md:hidden"> para todo tu <br class="md:hidden"> equipo</h3>
+            <header class="pb-10 md:pb-16">
+              <h3 class="title text-center text-dark-blue">Una herramienta <br class="md:hidden"> para todo tu equipo</h3>
             </header>
 
             <div class="grid row-gap-8 md:row-gap-0 md:grid-rows-none md:col-gap-16"
               :class="[gridRows, gridCols]">
               <article class="card"
                 v-for="(item, index) in items" :key="index">
-                <div class="card-header" :style="{ 'backgroundImage': `url('${item.imageSrc}')` }"></div>
+                <div class="card-header mb-2 md:mb-4" :style="{ 'backgroundImage': `url('${item.imageSrc}')` }"></div>
                 <div class="card-body">
                   <header>
                     <h1 class="title">{{ item.title }}</h1>
@@ -63,7 +63,7 @@ header h3 {
 }
 
 .card .card-header {
-  @apply w-full h-64 px-2 mb-4 rounded-lg bg-center bg-no-repeat bg-contain
+  @apply w-full h-64 px-2 rounded-lg bg-center bg-no-repeat bg-contain
 }
 
 .card .card-body .title,

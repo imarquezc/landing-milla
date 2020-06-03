@@ -1,6 +1,7 @@
 <template>
   <main id="main-section" class="container-full-section nav-section mt-16 relative">
-    <article class="container mx-auto grid grid-cols-12 md:col-gap-16 px-6 md:px-0">
+    <div id="svg-container" class="hidden md:block absolute bottom-0 right-0 overflow-hidden" ref="lavContainer"></div>
+    <article class="container mx-auto grid grid-cols-12 md:col-gap-16 px-6 md:px-0 z-50">
       <div class="col-span-12 md:col-start-2 md:col-span-5 text-center md:text-left flex items-center content-center">
         <div>
           <h1 class="mb-4 md:mb-6 text-dark-blue leading-tight md:leading-normal text-3xl md:text-4xl">Gestiona los viajes <br class="md:hidden"> de tu equipo de <br class="md:hidden"> forma simple</h1>
@@ -14,8 +15,6 @@
         </div>
       </div>
     </article>
-    <div class="hidden md:block absolute bottom-0 right-0 h-full w-full" ref="lavContainer">
-    </div>
   </main>
 </template>
 
@@ -46,7 +45,10 @@ export default {
           renderer: 'svg',
           loop: true,
           autoplay: false,
-          animationData: json
+          animationData: json,
+          rendererSettings: {
+            id: 'svg-animation',
+          }
         })
 
         animation.play()
@@ -69,5 +71,10 @@ export default {
   h2 {
     letter-spacing: 0.4px;
     line-height: 26px;
+  }
+
+  #svg-container { 
+    height: 736px !important;
+    width: 1336px !important;
   }
 </style>

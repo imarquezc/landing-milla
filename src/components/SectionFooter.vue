@@ -1,9 +1,10 @@
 <template>
   <footer class="relative">
-    <img src="@/assets/icons/circular.png" class="absolute bottom-0 right-0 max-h-full">
+    <div id="bg-container" class="hidden md:block absolute bottom-0 right-0 max-h-full"><div></div></div>
+
     <div class="container mx-auto grid grid-cols-12 md:col-gap-16 z-50 relative">
-      <div class="col-span-12 md:col-span-10 md:col-start-2 md:grid md:grid-cols-3 md:col-gap-16 my-8 md:my-20 text-lg text-dark-gray text-left">
-        <div class="p-2 text-center md:text-left pb-8 md:pb-0">
+      <div class="col-span-12 md:col-span-10 md:col-start-2 md:grid md:grid-cols-3 md:col-gap-16">
+        <div class="p-2 text-center md:text-left pb-8 md:pb-0 text-dark-gray">
           <img src="@/assets/logo-gray.png" class="h-8 mx-auto md:mx-0">
 
           <p class="py-4 ptb-20px">Gestiona los viajes de tu equipo</p>
@@ -16,12 +17,12 @@
           </ul>
         </div>
 
-        <div class="grid grid-rows-3 row-gap-8 p-2 text-center md:text-left pb-8 md:pb-0">
+        <div class="links-container text-center md:text-left">
           <a href="#main-section">Inicio</a>
           <a href="#how-it-works">Cómo funciona</a>
           <a href="#talk-to-milla">Pregúntale a Milla</a>
         </div>
-        <div class="grid grid-rows-3 row-gap-8 p-2 text-center md:text-left">
+        <div class="links-container text-center md:text-left">
           <a href="">Blog</a>
           <a href="">Términos y Privacidad</a>
           <a href="">Pruébalo Gratis</a>
@@ -32,15 +33,65 @@
 </template>
 
 <style scoped>
+  #bg-container {
+    width: 337px;
+    height: 376px;
+    background-color: #f7f7f7;
+  }
+
+  #bg-container div {
+	  border-bottom-right-radius: 300px;
+    @apply h-full w-full bg-white
+  }
+
+  .col-span-12 {
+    margin-top: 115px;
+  }
+
   .list-social-media li {
-    @apply inline-block mr-6
+    margin-right: 45px;
+    @apply inline-block
+  }
+
+  .list-social-media li:last-child {
+    margin-right: 0;
   }
 
   .list-social-media li a img {
     @apply h-8
   }
 
+  .links-container {
+    @apply text-dark-blue
+  }
+
+  .links-container a {
+    margin-bottom: 48px;
+    @apply block
+  }
+
   @media (min-width: 768px) {
+    footer {
+      height: 376px;
+      padding-top: 102px;
+    }
+
+    .col-span-12 {
+      margin-top: 0;
+    }
+
+    .list-social-media li {
+      @apply inline-block mr-6
+    }
+
+    .links-container a {
+      margin-bottom: 51px;
+    }
+
+    .links-container a:last-child {
+      margin-bottom: 0;
+    }
+
     .list-social-media li {
       margin-right: 20px;
       @apply inline-block

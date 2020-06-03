@@ -1,5 +1,5 @@
 <template>
-  <section class="pt-16">
+  <section>
     <div class="container mx-auto grid grid-cols-12">
       <div class="col-span-12 md:col-span-10 md:col-start-2">
         <header class="pb-16 text-center">
@@ -36,10 +36,19 @@ export default {
 
 <style scoped>
   section {
-    height: 400px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
   header h3 {
     line-height: 48px;
     letter-spacing: 0.4px;
+  }
+
+  @media (min-width: 768px) {
+    section {
+      padding-top: 64px;
+      padding-bottom: 0;
+      height: 400px;
+    }
   }
 </style>

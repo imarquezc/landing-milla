@@ -36,8 +36,8 @@
             Ingresa
           </a>
           
-          <img src="@/assets/icons/logo.png" class="md:hidden h-8 mx-auto mt-8 mb-4">
-          <p class="md:hidden text-sm text-dark-gray">Gestiona los viajes de tu Equipo</p>
+          <img src="@/assets/icons/logo.png" class="md:hidden h-8 mx-auto mb-4">
+          <p class="md:hidden text-dark-gray">Gestiona los viajes de tu Equipo</p>
         </div>
       </div>
     </div>
@@ -97,7 +97,8 @@ export default {
 <style scoped>
   nav {
     transition: height 0.25s ease-in-out;
-    @apply fixed w-full top-0 bg-white z-10
+    z-index: 100;
+    @apply fixed w-full top-0 bg-white bg-white
   }
 
   nav.menu-mobile {
@@ -117,7 +118,8 @@ export default {
   }
 
   nav ul li {
-    @apply block px-4 py-5 text-dark-blue transition duration-300 ease-in border-b
+    padding: 24px 32px;
+    @apply block text-dark-blue transition duration-300 ease-in border-b
   }
   
   nav ul li.active {
@@ -138,11 +140,22 @@ export default {
   }
 
   nav .btn-enter {
-    @apply h-12 flex justify-center items-center px-6 rounded font-medium tracking-wide leading-tight text-base
+    border-radius: 6px;
+    @apply h-12 flex justify-center items-center px-6 font-medium tracking-wide leading-tight text-base
   }
 
   nav .btn-create-account {
     box-shadow: 0px 6px 16px rgba(25, 168, 164, 0.16);
+  }
+
+  .transition-opacity img {
+    margin-top: 60px;
+  }
+
+  .transition-opacity p {
+    letter-spacing: 0.4px;
+    font-size: 14px;
+    line-height: 24px;
   }
 
   @media (min-width: 768px) {
@@ -175,7 +188,7 @@ export default {
     nav .btn-enter {
       font-size: 14px;
       box-shadow: 0px 6px 16px rgba(25, 168, 164, 0.16);
-      @apply h-8
+      @apply h-8 rounded
     }
   }
 </style>
