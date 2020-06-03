@@ -1,7 +1,6 @@
 <template>
   <main id="main-section" class="container-full-section nav-section mt-16 relative">
-    <div id="svg-container" class="hidden md:flex absolute bottom-0 overflow-hidden w-full h-full items-center content-end z-10">
-      <div class="mx-auto" ref="lavContainer"></div>
+    <div ref="lavContainer" id="svg-container" class="hidden md:flex absolute bottom-0 overflow-hidden w-full h-full items-center content-end z-10 md:mb-16">
     </div>
     <article class="container mx-auto grid grid-cols-12 md:col-gap-16 px-6 md:px-0 z-50">
       <div class="col-span-12 md:col-start-2 md:col-span-5 text-center md:text-left flex items-center content-center">
