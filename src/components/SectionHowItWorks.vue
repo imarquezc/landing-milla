@@ -32,7 +32,7 @@
                   <header>
                     <h1 class="title">{{ item.title }}</h1>
                   </header>
-                  <p class="paragraph">{{ item.content }}</p>
+                  <p class="paragraph" v-html="item.content"></p>
                 </div>
               </article>
             </div>
@@ -64,9 +64,9 @@ export default {
       active: 0,
       timer: null,
       items: [
-        { title: 'Reserva', content: 'Agenda tu viaje en minutos con el mejor inventario.', imageSrc: require('@/assets/how_work/Reserva.mp4') },
-        { title: 'Gestiona', content: 'Todo tu equipo en un mismo espacio, guarda su información y documentos.', imageSrc: require('@/assets/how_work/Gestiona.mp4') },
-        { title: 'Reporta', content: 'Visualiza los gastos de tu equipo en tiempo real.', imageSrc: require('@/assets/how_work/Reporta.mp4') }
+        { title: 'Reserva', content: 'Agenda tu viaje en minutos <br class="hidden md:block"> con el mejor inventario.', imageSrc: require('@/assets/how_work/Reserva.mp4') },
+        { title: 'Gestiona', content: 'Todo tu equipo en un mismo espacio, <br class="hidden md:block"> guarda su información y documentos.', imageSrc: require('@/assets/how_work/Gestiona.mp4') },
+        { title: 'Reporta', content: 'Visualiza los gastos de tu equipo <br class="hidden md:block"> en tiempo real.', imageSrc: require('@/assets/how_work/Reporta.mp4') }
       ]
     }
   },
