@@ -4,7 +4,7 @@
       <div class="grid grid-cols-12">
         <div class="col-span-12 md:col-span-10 md:col-start-2">
           <section class="md:grid md:grid-cols-2 md:col-span-12 text-center md:text-left">
-            <article>
+            <article class="relative">
               <header class="pb-12">
                 <h3 class="title text-dark-blue font-normal">¿Necesitas algo? Te <br> presentamos a Milla</h3>
               </header>
@@ -22,13 +22,9 @@
                 </p>
               </header>
 
-              <img class="max-h-full mx-auto my-10 md:hidden" :src="require('@/assets/milla/Milla.png')">
+              <img class="w-auto mx-auto my-10 md:my-0 md:absolute md:w-auto md:h-auto" src="@/assets/milla/Milla.png">
 
               <a href="#talk-to-milla" @click="openChat()" class="w-full md:w-auto">¡Habla con Milla!</a>
-            </article>
-            
-            <article class="hidden md:block">
-              <img :src="require('@/assets/milla/Milla.png')" class="max-h-full mx-auto">
             </article>
           </section>
         </div> 
@@ -73,6 +69,12 @@ a {
   a {
     width: 169px;
     @apply text-base
+  }
+
+  img {
+    left: 480px;
+    top: -55px;
+    max-width: 716px;
   }
 }
 </style>
