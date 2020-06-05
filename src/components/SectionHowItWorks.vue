@@ -66,9 +66,9 @@ export default {
       active: 0,
       timer: null,
       items: [
-        { title: 'Reserva', id: 0, animationFolder: 'gastos', animation: null, content: 'Agenda tu viaje en minutos <br class="hidden md:block"> con el mejor inventario.', imageSrc: require('@/assets/how_work/Reserva.mp4') },
+        { title: 'Reserva', id: 0, animationFolder: 'search', animation: null, content: 'Agenda tu viaje en minutos <br class="hidden md:block"> con el mejor inventario.', imageSrc: require('@/assets/how_work/Reserva.mp4') },
         { title: 'Gestiona', id: 1, animationFolder: 'gestiona', animation: null, content: 'Todo tu equipo en un mismo espacio, <br class="hidden md:block"> guarda su información y documentos.', imageSrc: require('@/assets/how_work/Gestiona.mp4') },
-        { title: 'Reporta', id: 2, animationFolder: 'search', animation: null, content: 'Visualiza los gastos de tu equipo <br class="hidden md:block"> en tiempo real.', imageSrc: require('@/assets/how_work/Reporta.mp4') }
+        { title: 'Reporta', id: 2, animationFolder: 'gastos', animation: null, content: 'Visualiza los gastos de tu equipo <br class="hidden md:block"> en tiempo real.', imageSrc: require('@/assets/how_work/Reporta.mp4') }
       ]
     }
   },
