@@ -1,5 +1,5 @@
 <template>
-  <main id="main-section" class="container-full-section nav-section mt-16 relative">
+  <main id="main-section" class=" w-full py-4 flex h-screen nav-section relative">
     <div ref="lavContainer" id="svg-container" class="hidden md:flex absolute bottom-0 overflow-hidden w-full h-full items-center content-end z-10 md:mb-16">
     </div>
     <article class="container mx-auto grid grid-cols-12 md:col-gap-16 px-6 md:px-0 z-50">
@@ -20,10 +20,8 @@
 </template>
 
 <script>
-import lottie from 'lottie-web';
+import lottie from 'lottie-web'
 import EmailInput from './EmailInput'
-
-import * as animationData from '@/assets/hero/data.json'
 
 export default {
   components:{
@@ -35,7 +33,7 @@ export default {
       const path = require('path')
 
       fetch( path.resolve('static/hero/data.json') ).then( resp => resp.json() ).then( json => { 
-        console.log(json)
+        // console.log(json)
 
         json.assets.filter(asset => asset.id.includes('image')).forEach((asset, index) => {
           json.assets[index].u = path.resolve('static/hero/images/') + '/'
@@ -45,14 +43,12 @@ export default {
           container: this.$refs.lavContainer,
           renderer: 'svg',
           loop: true,
-          autoplay: false,
+          autoplay: true,
           animationData: json,
           rendererSettings: {
             id: 'svg-animation',
           }
         })
-
-        animation.play()
       })
       
     }

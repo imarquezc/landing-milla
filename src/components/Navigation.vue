@@ -3,7 +3,7 @@
     <div class="container h-full mx-auto md:grid md:grid-cols-12">
       <div class="col-span-12 px-4 h-16 md:col-span-2 md:col-start-2 flex items-center justify-between">
         <a href="">
-          <img src="@/assets/logo.png">
+          <img src="@/assets/logo.svg">
         </a>
 
         <a @click="activeNavigation = !activeNavigation" class="md:hidden">
@@ -16,7 +16,7 @@
         <ul :class="{ 'hidden': !activeNavigation }">
           <li class="active"><a href="#main-section">Inicio<div></div></a></li>
           <li><a href="#how-it-works">Cómo funciona<div></div></a></li>
-          <li><a href="#" @click="openChat()">Soporte</a></li>
+          <li><a @click="openChat()">Soporte</a></li>
           <!-- <li><a href="">Blog</a></li> -->
         </ul>
       </div>
@@ -64,8 +64,9 @@ export default {
 
   methods: {
     openChat: function () {
-      window.Intercom('show');
+      window.Intercom('show')
     },
+
     scrollFunction: function () {
       const sectionsArray  = document.querySelectorAll('.nav-section')
       const sectionPos     = {}
@@ -130,7 +131,7 @@ export default {
   }
 
   nav ul li a {
-    @apply block h-full text-lg flex items-center relative
+    @apply block h-full text-lg flex items-center relative cursor-pointer
   }
 
   nav ul li a div {

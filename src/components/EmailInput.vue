@@ -47,6 +47,7 @@ export default {
 
     input, a {
       font-size: 16px;
+      max-width: 361px;
     }
   }
 </style>
