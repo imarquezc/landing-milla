@@ -22,13 +22,13 @@
                 </p>
               </header>
 
-              <img class="max-h-full mx-auto my-10 md:hidden" :src="require('@/assets/milla/Milla-blanco@2x 1.png')">
+              <img class="max-h-full mx-auto my-10 md:hidden" :src="require('@/assets/milla/Milla.png')">
 
               <a href="#talk-to-milla" @click="openChat()" class="w-full md:w-auto">¡Habla con Milla!</a>
             </article>
             
             <article class="hidden md:block">
-              <img :src="require('@/assets/milla/Milla-blanco@2x 1.png')" class="max-h-full mx-auto">
+              <img :src="require('@/assets/milla/Milla.png')" class="max-h-full mx-auto">
             </article>
           </section>
         </div> 

@@ -1,5 +1,5 @@
 <template>
-  <section id="how-it-works" class="container-full-section items-center">
+  <section id="how-it-works" class="container-full-section nav-section items-center">
     <div class="container mx-auto grid grid-rows-1 p-4 md:p-0">
       <div class="grid grid-cols-12">
         <div class="col-span-12 md:col-span-10 md:col-start-2 grid-rows-2">
@@ -41,8 +41,9 @@
               <div class="image-container" 
                 @mouseover="stopTimer()"
                 @mouseleave="initializeTimer()">
-                <video id="video" autoplay loop class="mx-auto" :src="activeItem.imageSrc" type="video/mp4">
-                </video>
+                <div class="max-h-full max-w-full">
+                  <div v-for="item in items" :key="item.id" ref="svgs" v-show="item.id == active" class="svg-container"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -53,6 +54,7 @@
 </template>
 
 <script>
+import lottie from 'lottie-web'
 import mixins from '../mixins/index'
 
 export default {
@@ -64,9 +66,9 @@ export default {
       active: 0,
       timer: null,
       items: [
-        { title: 'Reserva', content: 'Agenda tu viaje en minutos <br class="hidden md:block"> con el mejor inventario.', imageSrc: require('@/assets/how_work/Reserva.mp4') },
-        { title: 'Gestiona', content: 'Todo tu equipo en un mismo espacio, <br class="hidden md:block"> guarda su información y documentos.', imageSrc: require('@/assets/how_work/Gestiona.mp4') },
-        { title: 'Reporta', content: 'Visualiza los gastos de tu equipo <br class="hidden md:block"> en tiempo real.', imageSrc: require('@/assets/how_work/Reporta.mp4') }
+        { title: 'Reserva', id: 0, animationFolder: 'gastos', animation: null, content: 'Agenda tu viaje en minutos <br class="hidden md:block"> con el mejor inventario.', imageSrc: require('@/assets/how_work/Reserva.mp4') },
+        { title: 'Gestiona', id: 1, animationFolder: 'gestiona', animation: null, content: 'Todo tu equipo en un mismo espacio, <br class="hidden md:block"> guarda su información y documentos.', imageSrc: require('@/assets/how_work/Gestiona.mp4') },
+        { title: 'Reporta', id: 2, animationFolder: 'search', animation: null, content: 'Visualiza los gastos de tu equipo <br class="hidden md:block"> en tiempo real.', imageSrc: require('@/assets/how_work/Reporta.mp4') }
       ]
     }
   },
@@ -85,26 +87,27 @@ export default {
     initializeTimer () {
       const that         = this
       const timeInterval = 10000
-      const video        = document.getElementById('video')
 
       if (that.items.length > 1) {
         that.timer = setInterval(() => {
-          video.pause()
-          that.active = that.active >= that.items.length - 1 ? 0 : that.active + 1
-          video.load()
-          video.play()
+          const index = that.active >= that.items.length - 1 ? 0 : that.active + 1
+          that.changeAnimation(index)
         }, timeInterval)
       }
     },
 
     stopTimer () {
-      if (this.timer != null) {        
-        clearInterval(this.timer)
-      }
+      if (this.timer != null) clearInterval(this.timer)
+    },
+
+    changeAnimation (index) {
+      this.activeItem.animation.stop()
+      this.active = index
+      this.activeItem.animation.play()
     },
 
     changeActiveItem (index) {
-      this.active = index
+      this.changeAnimation(index)
       this.stopTimer()
       this.initializeTimer()
     },
@@ -119,10 +122,35 @@ export default {
 
     detectDevice () {
       this.mobile = this.isMobile()
+    },
+
+    loadSVG (item, autoplay) {
+      const path = require('path')
+
+      fetch( path.resolve(`static/features/${item.animationFolder}/data.json`) ).then( resp => resp.json() ).then( json => { 
+        json.assets.filter(asset => asset.id.includes('image')).forEach((asset, index) => {
+          json.assets[index].u = path.resolve(`static/features/${item.animationFolder}/images/`) + '/'
+        })
+
+        item.animation = lottie.loadAnimation({
+          container: this.$refs.svgs[item.id],
+          renderer: 'svg',
+          loop: true,
+          autoplay: false,
+          animationData: json,
+          rendererSettings: {
+            id: item.ref,
+          }
+        })
+
+        if(autoplay) item.animation.play()
+
+      })
     }
   },
 
   mounted: function () {
+    this.items.forEach((item, index) => this.loadSVG(item, index == 0))
     this.initializeTimer()
     this.detectDevice()
     window.addEventListener('resize', this.detectDevice())
@@ -131,6 +159,10 @@ export default {
 </script>
 
 <style scoped>
+svg {
+  display: none !important;
+}
+
 section {
   display: none !important;
 }
@@ -188,7 +220,8 @@ header h3 {
     @apply h-full bg-center bg-no-repeat bg-cover
   }
 
-  .image-container video {
+  .image-container video,
+  .image-container .svg-container {
     box-shadow: 2px 4px 4px rgba(146, 148, 151, 0.12);
     @apply rounded-md max-w-full max-h-full
   }
