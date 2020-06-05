@@ -223,6 +223,7 @@ header h3 {
   .image-container video,
   .image-container .svg-container {
     box-shadow: 2px 4px 4px rgba(146, 148, 151, 0.12);
+    overflow: hidden;
     @apply rounded-md max-w-full max-h-full
   }
 
