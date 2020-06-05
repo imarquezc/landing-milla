@@ -75,6 +75,7 @@ a {
     left: 480px;
     top: -55px;
     max-width: 716px;
+    z-index: -10;
   }
 }
 </style>
