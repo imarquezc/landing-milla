@@ -76,5 +76,9 @@ header .subtitle {
   header .subtitle {
     @apply text-lg
   }
+
+  .container-full-section {
+    @apply pt-16
+  }
 }
 </style>
