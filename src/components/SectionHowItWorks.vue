@@ -8,8 +8,7 @@
           </header>
 
           <div class="grid grid-cols-5 col-gap-12">
-            <div class="col-span-5 md:col-span-2 grid grid-flow-col grid-rows-1 md:row-gap-4"
-              :class="[gridRows]">
+            <div class="col-span-5 md:col-span-2 grid grid-flow-col grid-rows-1 md:row-gap-4 md:grid-rows-3">
               <article class="card"
                 v-for="(item, index) in items" :key="index"
                 :class="{ 'active': index == active }"
@@ -77,10 +76,6 @@ export default {
     activeItem: function () {
       return this.items[this.active]
     },
-
-    gridRows: function () {
-      return 'md:grid-rows-' + this.items.length
-    }
   },
 
   methods: {

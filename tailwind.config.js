@@ -31,4 +31,12 @@ module.exports = {
   },
   variants: {},
   plugins: [],
+  purge: {
+    enabled: true,
+    content: [
+      './src/**/*.html',
+      './src/**/*.vue',
+      './src/**/*.js',
+    ],
+  }
 }
