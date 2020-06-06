@@ -22,7 +22,8 @@
                 </p>
               </header>
 
-              <img class="w-auto mx-auto my-10 md:my-0 md:absolute md:w-auto md:h-auto" src="@/assets/milla/Milla.png">
+              <img class="md:hidden my-10" src="@/assets/milla/Milla-mobile.png">
+              <img class="hidden md:block absolute w-auto h-auto" src="@/assets/milla/Milla.png">
 
               <a href="#talk-to-milla" @click="openChat()" class="w-full md:w-auto">¡Habla con Milla!</a>
             </article>
@@ -59,6 +60,10 @@ a {
   font-size: 15px;
   height: 48px;
   @apply flex justify-center items-center px-4 bg-principal-green rounded-md text-white font-medium text-center
+}
+
+img {
+  @apply w-auto mx-auto
 }
 
 @media (min-width: 768px) {
