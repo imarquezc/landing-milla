@@ -1,30 +1,19 @@
 <template>
   <section id="how-it-works" class="container-full-section nav-section items-center">
-    <div class="container mx-auto grid grid-rows-1 p-4 md:p-0">
+    <div class="container mx-auto grid grid-rows-1 py-4 px-8 md:p-0">
       <div class="grid grid-cols-12">
         <div class="col-span-12 md:col-span-10 md:col-start-2 grid-rows-2">
           <header class="pb-12 header-section">
             <h3 class="title text-center md:text-left text-dark-blue">Cómo funciona</h3>
           </header>
 
-          <div class="grid grid-cols-5 col-gap-12">
-            <div class="col-span-5 md:col-span-2 grid grid-flow-col grid-rows-1 md:row-gap-4 md:grid-rows-3">
+          <div class="grid-area-container">
+            <div class="cards-grid-container md:col-span-2 grid grid-flow-col grid-rows-1 md:row-gap-4 md:grid-rows-3">
               <article class="card"
                 v-for="(item, index) in items" :key="index"
                 :class="{ 'active': index == active }"
                 @click="!mobile ? changeActiveItem(index) : null">
                 <div class="card-header" :style="{ 'background-image': 'url(' + item.imageSrc + ')' }">
-                  <!-- <span class="card-arrow" 
-                    :class="{ invisible: !hasBackItem(index) }"
-                    @click="changeActiveItem(index - 1)">
-                    <i>a</i>
-                  </span>
-                  
-                  <span class="card-arrow" 
-                    :class="{ invisible: !hasNextItem(index) }"
-                    @click="changeActiveItem(index + 1)">
-                    <i>a</i>
-                  </span> -->
                 </div>
                 
                 <div class="card-body">
@@ -33,10 +22,18 @@
                   </header>
                   <p class="paragraph" v-html="item.content"></p>
                 </div>
+
+                <div class="arrow-container">
+                  <img 
+                    v-lazy="require('@/assets/icons/Arrow.png')"
+                    @click="changeActiveItem(hasNextItem(index) ? index + 1 : 0)">
+                </div>
+
+                <div class="bg-mobile"></div>
               </article>
             </div>
 
-            <div class="hidden md:block col-span-3">
+            <div class="image-grid-container">
               <div class="image-container" 
                 @mouseover="stopTimer()"
                 @mouseleave="initializeTimer()">
@@ -65,9 +62,9 @@ export default {
       active: 0,
       timer: null,
       items: [
-        { title: 'Reserva', id: 0, animationFolder: 'search', animation: null, content: 'Agenda tu viaje en minutos <br class="hidden md:block"> con el mejor inventario.', imageSrc: require('@/assets/how_work/Reserva.mp4') },
-        { title: 'Gestiona', id: 1, animationFolder: 'gestiona', animation: null, content: 'Todo tu equipo en un mismo espacio, <br class="hidden md:block"> guarda su información y documentos.', imageSrc: require('@/assets/how_work/Gestiona.mp4') },
-        { title: 'Reporta', id: 2, animationFolder: 'gastos', animation: null, content: 'Visualiza los gastos de tu equipo <br class="hidden md:block"> en tiempo real.', imageSrc: require('@/assets/how_work/Reporta.mp4') }
+        { title: 'Reserva', id: 0, animationFolder: 'search', animation: null, content: 'Agenda tu viaje en minutos <br> con el mejor inventario.', imageSrc: require('@/assets/how_work/Reserva.mp4') },
+        { title: 'Gestiona', id: 1, animationFolder: 'gestiona', animation: null, content: 'Todo tu equipo en un mismo espacio, <br class="hidden md:block"> guarda su información y <br class="md:hidden"> documentos.', imageSrc: require('@/assets/how_work/Gestiona.mp4') },
+        { title: 'Reporta', id: 2, animationFolder: 'gastos', animation: null, content: 'Visualiza los gastos de tu equipo <br> en tiempo real.', imageSrc: require('@/assets/how_work/Reporta.mp4') }
       ]
     }
   },
@@ -147,10 +144,10 @@ export default {
   mounted: function () {
     const that = this
 
-    setTimeout(() => {
+    // setTimeout(() => {
       that.items.forEach((item, index) => that.loadSVG(item, index == 0))
       that.initializeTimer()
-    }, 2500)
+    // }, 2500)
     
     this.detectDevice()
     window.addEventListener('resize', this.detectDevice())
@@ -159,11 +156,24 @@ export default {
 </script>
 
 <style scoped>
-svg {
-  display: none !important;
+.grid-area-container {
+  display: grid;
+  grid-template-areas: "sectionA"
+                       "sectionB";
+  @apply grid col-gap-12
 }
 
-section {
+.cards-grid-container {
+  grid-area: sectionB;
+  @apply col-span-5
+}
+
+.image-grid-container {
+  grid-area: sectionA;
+  @apply col-span-5
+}
+
+svg {
   display: none !important;
 }
 
@@ -176,25 +186,26 @@ header h3 {
 }
 
 .card {
-  @apply hidden text-gray-500 transition-all duration-300 ease-in
+  @apply hidden text-gray-500 transition-all duration-300 ease-in border relative bg-white
 }
 
 .card.active {
-  @apply block text-gray-900 shadow-md
+  border-color: rgba(0, 168, 143, 0.56);
+  @apply block text-gray-900
 }
 
 .card .card-header {
-  @apply w-full h-64 px-2 flex justify-between items-center rounded-tl-lg rounded-tr-lg bg-center bg-no-repeat bg-contain
+  @apply rounded-tl-lg rounded-tr-lg bg-center bg-no-repeat bg-contain
 }
 
 .card .card-header .card-arrow {
   border-radius: 50%;
-  @apply h-10 w-10 bg-gray-400 flex items-center justify-center
+  @apply flex items-center justify-center
 }
 
 .card .card-body {
   letter-spacing: 0.4px;
-  @apply px-6 py-5
+  @apply py-5 pl-4 pr-8
 }
 
 .card .card-body .title {
@@ -209,34 +220,75 @@ header h3 {
   @apply text-dark-gray
 }
 
+.card .arrow-container {
+  right: -28px;
+  @apply flex items-center absolute top-0 h-full
+}
+
+.card .bg-mobile {
+  width: calc(100% - 16px);
+  left: 8px;
+  bottom: -8px;
+  z-index: -10;
+  opacity: 0.24;
+  @apply bg-light-gray h-8 absolute rounded-md
+}
+
+.image-container .svg-container {
+  box-shadow: 2px 4px 4px rgba(146, 148, 151, 0.12);
+  overflow: hidden;
+  @apply rounded-md max-w-full max-h-full mb-6
+}
+
 /* Medium (md) */
 @media (min-width: 768px) {
+  .grid-area-container {
+    grid-template-areas: "sectionA sectionB";
+  }
+
+  .cards-grid-container {
+    grid-area: sectionA;
+    @apply col-span-2
+  }
+
+  .image-grid-container {
+    grid-area: sectionB;
+    @apply col-span-3
+  }
+
   section {
     display: flex !important;
   }
 
+  .image-container .svg-container {
+    @apply m-0
+  }
+
   .image-container {
-    /*box-shadow: 2px 4px 4px rgba(146, 148, 151, 0.12);*/
     @apply h-full bg-center bg-no-repeat bg-cover
   }
 
-  .image-container video,
-  .image-container .svg-container {
-    box-shadow: 2px 4px 4px rgba(146, 148, 151, 0.12);
-    overflow: hidden;
-    @apply rounded-md max-w-full max-h-full
-  }
-
   .card {
-    @apply block text-gray-500 border border-transparent
+    @apply text-gray-500 border-transparent flex
   }
 
   .card.active {
-    border-color: rgba(0, 168, 143, 0.56);
-    @apply shadow-none
+    @apply flex
   }
 
   .card .card-header {
+    @apply hidden
+  }
+
+  .card .card-body {
+    @apply px-6 my-auto
+  }
+
+  .card .arrow-container {
+    @apply hidden
+  }
+
+  .card .bg-mobile {
     @apply hidden
   }
 }
