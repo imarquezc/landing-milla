@@ -145,8 +145,13 @@ export default {
   },
 
   mounted: function () {
-    this.items.forEach((item, index) => this.loadSVG(item, index == 0))
-    this.initializeTimer()
+    const that = this
+
+    setTimeout(() => {
+      that.items.forEach((item, index) => that.loadSVG(item, index == 0))
+      that.initializeTimer()
+    }, 5000)
+    
     this.detectDevice()
     window.addEventListener('resize', this.detectDevice())
   }
