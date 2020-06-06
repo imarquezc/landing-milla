@@ -150,7 +150,7 @@ export default {
     setTimeout(() => {
       that.items.forEach((item, index) => that.loadSVG(item, index == 0))
       that.initializeTimer()
-    }, 5000)
+    }, 2500)
     
     this.detectDevice()
     window.addEventListener('resize', this.detectDevice())
