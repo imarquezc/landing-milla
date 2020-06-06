@@ -11,7 +11,7 @@
             v-for="(item, index) in items" :key="index"
             :class="item.class">
             <figure class="w-full flex mx-auto">
-              <img :src="item.logo" class="logo-partner">
+              <img v-lazy="item.logo" class="logo-partner">
             </figure>
           </article>
         </div>

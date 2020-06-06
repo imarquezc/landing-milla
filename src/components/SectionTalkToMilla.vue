@@ -22,8 +22,8 @@
                 </p>
               </header>
 
-              <img class="md:hidden my-10" src="@/assets/milla/Milla-mobile.png">
-              <img class="hidden md:block absolute w-auto h-auto" src="@/assets/milla/Milla.png">
+              <img class="md:hidden my-10" v-lazy="require('@/assets/milla/Milla-mobile.png')">
+              <img class="hidden md:block absolute w-auto h-auto" v-lazy="require('@/assets/milla/Milla.png')">
 
               <a href="#talk-to-milla" @click="openChat()" class="w-full md:w-auto">¡Habla con Milla!</a>
             </article>

@@ -14,7 +14,7 @@
                 v-for="(item, index) in items" :key="index">
                 <!-- :style="{ 'backgroundImage': `url('${item.imageSrc}')` }" -->
                 <div class="card-header mb-4">
-                  <img :src="item.imageSrc" class="max-h-full max-w-full">
+                  <img v-lazy="item.imageSrc" class="max-h-full max-w-full">
                 </div>
                 <div class="card-body">
                   <header>
