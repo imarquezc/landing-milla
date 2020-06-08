@@ -4,7 +4,7 @@
 
     <div class="container mx-auto grid grid-cols-12 md:col-gap-16 z-50 relative">
       <div class="col-span-12 md:col-span-10 md:col-start-2 md:grid md:grid-cols-3 md:col-gap-16">
-        <div class="p-2 text-center md:text-left pb-8 md:pb-0 text-dark-gray">
+        <div class="text-center md:text-left pb-8 md:pb-0 text-dark-gray">
           <img v-lazy="require('@/assets/logo-gray.png')" class="h-8 mx-auto md:mx-0">
 
           <p class="py-4 ptb-20px text-sm">Gestiona los viajes de tu equipo</p>

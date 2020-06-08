@@ -25,7 +25,7 @@
 
                 <div class="arrow-container">
                   <img 
-                    v-lazy="require('@/assets/icons/Arrow.png')"
+                    v-lazy="require('@/assets/icons/Arrow.svg')"
                     @click="changeActiveItem(hasNextItem(index) ? index + 1 : 0)">
                 </div>
 
