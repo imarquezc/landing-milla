@@ -4,16 +4,16 @@
 
     <div class="container mx-auto grid grid-cols-12 md:col-gap-16 z-50 relative">
       <div class="col-span-12 md:col-span-10 md:col-start-2 md:grid md:grid-cols-3 md:col-gap-16">
-        <div class="p-2 text-center md:text-left pb-8 md:pb-0 text-dark-gray">
-          <img src="@/assets/logo-gray.png" class="h-8 mx-auto md:mx-0">
+        <div class="text-center md:text-left pb-8 md:pb-0 text-dark-gray">
+          <img v-lazy="require('@/assets/logo-gray.png')" class="h-8 mx-auto md:mx-0">
 
           <p class="py-4 ptb-20px text-sm">Gestiona los viajes de tu equipo</p>
 
           <ul class="list-social-media">
-            <!-- <li><a href=""><img src="@/assets/social_media/facebook.png"></a></li> -->
-            <!-- <li><a href=""><img src="@/assets/social_media/instagram.png"></a></li> -->
-            <li><a href="https://www.linkedin.com/company/millatravel/"><img src="@/assets/social_media/linkedin.png"></a></li>
-            <li><a href="https://twitter.com/MillaTravel"><img src="@/assets/social_media/twitter.png"></a></li>
+            <!-- <li><a href=""><img v-lazy="require(@/assets/social_media/facebook.png)"></a></li> -->
+            <!-- <li><a href=""><img v-lazy="require('@/assets/social_media/instagram.png')"></a></li> -->
+            <li><a href="https://www.linkedin.com/company/millatravel/"><img v-lazy="require('@/assets/social_media/linkedin.png')"></a></li>
+            <li><a href="https://twitter.com/MillaTravel"><img v-lazy="require('@/assets/social_media/twitter.png')"></a></li>
           </ul>
         </div>
 

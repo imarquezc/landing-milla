@@ -7,7 +7,7 @@
         </a>
 
         <a @click="activeNavigation = !activeNavigation" class="md:hidden">
-          <img :src="activeNavigation ? require('@/assets/icons/close.png') : require('@/assets/icons/menu.png')" alt="">
+          <img :src="activeNavigation ? require('@/assets/icons/close.svg') : require('@/assets/icons/menu.svg')" alt="">
         </a>
       </div>
 

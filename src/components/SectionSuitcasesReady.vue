@@ -12,7 +12,7 @@
         </p>
       </div>
 
-      <img :src="require('@/assets/icons/Maleta.svg')" class="col-span-12 m-auto md:absolute md:right-0">
+      <img v-lazy="require('@/assets/icons/Maleta.svg')" class="col-span-12 m-auto md:absolute md:right-0">
     </div>
   </section>
 </template>
