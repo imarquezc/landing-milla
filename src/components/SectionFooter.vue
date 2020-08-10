@@ -11,7 +11,7 @@
 
           <ul class="list-social-media">
             <!-- <li><a href=""><img v-lazy="require(@/assets/social_media/facebook.png)"></a></li> -->
-            <!-- <li><a href=""><img v-lazy="require('@/assets/social_media/instagram.png')"></a></li> -->
+            <li><a href="https://www.instagram.com/milla_travel/"><img v-lazy="require('@/assets/social_media/instagram.png')"></a></li>
             <li><a href="https://www.linkedin.com/company/millatravel/"><img v-lazy="require('@/assets/social_media/linkedin.png')"></a></li>
             <li><a href="https://twitter.com/MillaTravel"><img v-lazy="require('@/assets/social_media/twitter.png')"></a></li>
           </ul>
@@ -23,7 +23,7 @@
           <a href="#talk-to-milla">Pregúntale a Milla</a>
         </div>
         <div class="links-container text-center md:text-left">
-          <!-- <a href="">Blog</a> -->
+          <a href="https://blog.milla.travel/#/onboarding" target="_blank">Blog</a>
           <a :href="require('path').resolve('static/terms/tyc.pdf')" target="_blank">Términos y Privacidad</a>
           <a href="https://app.milla.travel/#/onboarding">Pruébalo Gratis</a>
         </div>

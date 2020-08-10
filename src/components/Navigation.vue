@@ -17,7 +17,7 @@
           <li @click="closeNav()" class="active"><a href="#main-section">Inicio<div></div></a></li>
           <li @click="closeNav()" ><a href="#how-it-works">Cómo funciona<div></div></a></li>
           <li @click="closeNav()" ><a @click="openChat()">Soporte</a></li>
-          <!-- <li><a href="">Blog</a></li> -->
+          <li><a target="_blank" href="https://blog.milla.travel/#/onboarding">Blog</a></li>
         </ul>
       </div>
       
