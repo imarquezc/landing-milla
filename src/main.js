@@ -14,6 +14,7 @@ const router = new VueRouter({
   routes: [
     { path: '/', component: Home },
     { path: '/terminos-y-condiciones', component: Terms },
+    { path: '*', component: Home }
   ]
 });
 
