@@ -7,7 +7,6 @@
     <section-talk-to-milla />
     <section-partners />
     <section-suitcases-ready />
-    <section-footer />
   </section>
 </template>
 
@@ -19,7 +18,6 @@ import SectionProductDescription from '../components/SectionProductDescription'
 import SectionTalkToMilla from '../components/SectionTalkToMilla'
 import SectionPartners from '../components/SectionPartners'
 import SectionSuitcasesReady from '../components/SectionSuitcasesReady'
-import SectionFooter from '../components/SectionFooter'
 
 export default {
   name: 'Home',
@@ -30,8 +28,7 @@ export default {
     SectionProductDescription,
     SectionTalkToMilla,
     SectionPartners,
-    SectionSuitcasesReady,
-    SectionFooter
+    SectionSuitcasesReady
   }
 }
 </script>

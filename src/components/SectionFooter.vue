@@ -18,13 +18,13 @@
         </div>
 
         <div class="links-container text-center md:text-left">
-          <a href="#main-section">Inicio</a>
-          <a href="#how-it-works">Cómo funciona</a>
-          <a href="#talk-to-milla">Pregúntale a Milla</a>
+          <a href="/#main-section">Inicio</a>
+          <a href="/#how-it-works">Cómo funciona</a>
+          <a href="/#talk-to-milla">Pregúntale a Milla</a>
         </div>
         <div class="links-container text-center md:text-left">
           <a href="https://blog.milla.travel/#/onboarding" target="_blank">Blog</a>
-          <a :href="require('path').resolve('static/terms/tyc.pdf')" target="_blank">Términos y Privacidad</a>
+          <a href="/terminos-y-condiciones">Términos y Privacidad</a>
           <a href="https://app.milla.travel/#/onboarding">Pruébalo Gratis</a>
         </div>
       </div>
