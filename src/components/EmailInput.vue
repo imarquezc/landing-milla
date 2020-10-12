@@ -1,7 +1,7 @@
 <template>
   <div class="w-full">
     <input class="" v-model="teamName" type="text" placeholder="Nombre de tu equipo">
-    <a :href="`https://app.milla.travel/#/onboarding?companyName=${teamName}`">¡Pruébalo Gratis!</a>
+    <a :href="link">¡Pruébalo Gratis!</a>
   </div>
 </template>
 
@@ -10,6 +10,15 @@ export default {
   data() {
     return {
       teamName: null,
+    };
+  },
+  computed: {
+    link() {
+      if (this.teamName) {
+        return `https://app.milla.travel/#/onboarding?companyName=${this.teamName}`;
+      }
+
+      return 'https://app.milla.travel/#/onboarding';
     }
   }
 }
