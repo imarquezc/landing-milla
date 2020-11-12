@@ -2,10 +2,10 @@
   <section class="home">
     <navigation />
     <main-section />
+    <section-partners />
     <section-product-description />
     <section-how-it-works />
     <section-talk-to-milla />
-    <section-partners />
     <section-suitcases-ready />
   </section>
 </template>
