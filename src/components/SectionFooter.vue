@@ -11,7 +11,7 @@
 
           <ul class="list-social-media">
             <!-- <li><a href=""><img v-lazy="require(@/assets/social_media/facebook.png)"></a></li> -->
-            <li><a href="https://www.instagram.com/milla_travel/"><img v-lazy="require('@/assets/social_media/instagram.png')"></a></li>
+            <li><a href="https://www.instagram.com/milla.travel/"><img v-lazy="require('@/assets/social_media/instagram.png')"></a></li>
             <li><a href="https://www.linkedin.com/company/millatravel/"><img v-lazy="require('@/assets/social_media/linkedin.png')"></a></li>
             <li><a href="https://twitter.com/MillaTravel"><img v-lazy="require('@/assets/social_media/twitter.png')"></a></li>
           </ul>
