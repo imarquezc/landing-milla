@@ -7,7 +7,7 @@
         </header>
 
         <div class="md:grid md:grid-cols-5 md:gap-12">
-          <article class="flex items-center my-4 md:m-0 last:my-0"
+          <article class="flex items-center my-8 md:m-0 last:my-0"
             v-for="(item, index) in items" :key="index"
           >
             <figure class="md:w-full w-1/2 mb-4 md:m-0 flex mx-auto">
@@ -28,7 +28,7 @@ export default {
         { logo: require('@/assets/partners/alatheia.png'), link: '' },
         { logo: require('@/assets/partners/fintual.png'), link: '' },
         { logo: require('@/assets/partners/rising-sun.png'), link: '' },
-        { logo: require('@/assets/partners/hackmetrix.png'), link: '' },
+        { logo: require('@/assets/partners/fintoc.png'), link: '' },
         { logo: require('@/assets/partners/mudango.png'), link: '' },
       ]
     }
