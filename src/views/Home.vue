@@ -5,6 +5,7 @@
     <section-partners />
     <section-product-description />
     <section-how-it-works />
+    <section-pricing />
     <section-talk-to-milla />
     <section-suitcases-ready />
   </section>
@@ -13,10 +14,11 @@
 <script>
 import Navigation from '../components/Navigation.vue'
 import MainSection from '../components/MainSection'
-import SectionHowItWorks from '../components/SectionHowItWorks'
-import SectionProductDescription from '../components/SectionProductDescription'
-import SectionTalkToMilla from '../components/SectionTalkToMilla'
 import SectionPartners from '../components/SectionPartners'
+import SectionProductDescription from '../components/SectionProductDescription'
+import SectionHowItWorks from '../components/SectionHowItWorks'
+import SectionPricing from '../components/SectionPricing.vue'
+import SectionTalkToMilla from '../components/SectionTalkToMilla'
 import SectionSuitcasesReady from '../components/SectionSuitcasesReady'
 
 export default {
@@ -25,6 +27,7 @@ export default {
     Navigation,
     MainSection,
     SectionHowItWorks,
+    SectionPricing,
     SectionProductDescription,
     SectionTalkToMilla,
     SectionPartners,
@@ -34,7 +37,8 @@ export default {
 </script>
 
 <style>
-html {
+h,
+    SectionPricingtml {
   scroll-behavior: smooth;
 }
 
