@@ -33,7 +33,6 @@ export default {
       const path = require('path')
 
       fetch( path.resolve('static/hero/data.json') ).then( resp => resp.json() ).then( json => { 
-        // console.log(json)
 
         json.assets.filter(asset => asset.id.includes('image')).forEach((asset, index) => {
           json.assets[index].u = path.resolve('static/hero/images/') + '/'

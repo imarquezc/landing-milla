@@ -1,16 +1,18 @@
 <template>
-  <section id="app">
-    <Home />
-  </section>
+  <div id="app">    
+    <router-view>
+    </router-view>
+    <section-footer />
+  </div>
 </template>
 
 <script>
-import Home from './views/Home.vue'
+import SectionFooter from './components/SectionFooter'
 
 export default {
   name: 'App',
   components: {
-    Home
+    SectionFooter
   }
 }
 </script>

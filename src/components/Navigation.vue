@@ -17,7 +17,7 @@
           <li @click="closeNav()" class="active"><a href="#main-section">Inicio<div></div></a></li>
           <li @click="closeNav()" ><a href="#how-it-works">Cómo funciona<div></div></a></li>
           <li @click="closeNav()" ><a @click="openChat()">Soporte</a></li>
-          <!-- <li><a href="">Blog</a></li> -->
+          <li><a target="_blank" href="https://blog.milla.travel/#/onboarding">Blog</a></li>
         </ul>
       </div>
       
@@ -27,12 +27,12 @@
         <div class="px-8 md:px-0 md:flex md:items-center md:justify-end md:h-full text-center" 
           :class="{ 'hidden': !activeNavigation }">
           <div class="md:hidden">
-            <a href="https://app.milla.travel/#/register" class="btn-enter btn-create-account mt-8 mb-4 bg-principal-green text-white">
+            <a href="https://app.milla.travel/#/onboarding" class="btn-enter btn-create-account mt-8 mb-4 bg-principal-green text-white">
               Crear cuenta
             </a>
           </div>
 
-          <a href="https://app.milla.travel/#/login" class="btn-enter bg-light-green text-principal-green md:bg-principal-green md:text-white text-sm">
+          <a href="https://app.milla.travel/" class="btn-enter bg-light-green text-principal-green md:bg-principal-green md:text-white text-sm">
             Ingresa
           </a>
           
@@ -64,7 +64,7 @@ export default {
 
   methods: {
     openChat: function () {
-      window.Intercom('show')
+      window.Trengo.Api.Widget.open('chat');
     },
     closeNav() {
       this.activeNavigation = false;

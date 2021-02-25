@@ -3,15 +3,15 @@
     <div class="container mx-auto grid grid-cols-12">
       <div class="col-span-12 md:col-span-10 md:col-start-2">
         <header class="text-center">
-          <h3 class="text-center text-3xl text-dark-blue">Confían en nosotros</h3>
+          <h3 class="text-center text-3xl text-dark-blue">Viajan con nosotros</h3>
         </header>
 
-        <div class="md:grid md:grid-cols-4">
-          <article class="flex items-center"
+        <div class="md:grid md:grid-cols-5 md:gap-12">
+          <article class="flex items-center my-8 md:m-0 last:my-0"
             v-for="(item, index) in items" :key="index"
-            :class="item.class">
-            <figure class="w-full flex mx-auto">
-              <img v-lazy="item.logo" class="logo-partner">
+          >
+            <figure class="md:w-full w-1/2 mb-4 md:m-0 flex mx-auto">
+              <img v-lazy="item.logo">
             </figure>
           </article>
         </div>
@@ -25,10 +25,11 @@ export default {
   data: function () {
     return {
       items: [
-        { logo: require('@/assets/partners/startupchile.svg'), link: '', class: 'partner-startupchile' },
-        { logo: require('@/assets/partners/corfo.svg'), link: '', class: 'partner-corfo' },
-        { logo: require('@/assets/partners/duffel.svg'), link: '', class: 'partner-duffel' },
-        { logo: require('@/assets/partners/ventures.svg'), link: '', class: 'partner-ventures' },
+        { logo: require('@/assets/partners/alatheia.png'), link: '' },
+        { logo: require('@/assets/partners/fintual.png'), link: '' },
+        { logo: require('@/assets/partners/rising-sun.png'), link: '' },
+        { logo: require('@/assets/partners/fintoc.png'), link: '' },
+        { logo: require('@/assets/partners/mudango.png'), link: '' },
       ]
     }
   }
@@ -53,38 +54,6 @@ export default {
     @apply m-auto max-w-full max-h-full
   }
 
-  .partner-startupchile {
-    margin-bottom: 87.96px;
-  }
-
-  .partner-startupchile img {
-    height: 18px;
-  }
-
-  .partner-corfo {
-    margin-bottom: 80.96px;
-  }
-  
-  .partner-corfo img {
-    height: 52px;
-  }
-
-  .partner-duffel {
-    margin-bottom: 88px;
-  }
-
-  .partner-duffel img {
-    height: 32px;
-  }
-
-  .partner-ventures {
-    margin-bottom: 103px;
-  }
-
-  .partner-ventures img {
-    height: 32px;
-  }
-
   @media (min-width: 768px) {
     section {
       padding-top: 64px;
@@ -92,29 +61,12 @@ export default {
       height: 400px;
     }
 
-
     header {
       margin-bottom: 116px;
     }
 
     article {
       margin: 0 !important;
-    }
-
-    .partner-startupchile img {
-      height: 14.23px;
-    }
-
-    .partner-corfo img {
-      height: 40px;
-    }
-
-    .partner-duffel img {
-      height: 24px;
-    }
-
-    .partner-ventures img {
-      height: 20.42px;
     }
   }
 </style>

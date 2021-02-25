@@ -2,24 +2,24 @@
   <section class="home">
     <navigation />
     <main-section />
+    <section-partners />
     <section-product-description />
     <section-how-it-works />
+    <section-pricing />
     <section-talk-to-milla />
-    <section-partners />
     <section-suitcases-ready />
-    <section-footer />
   </section>
 </template>
 
 <script>
 import Navigation from '../components/Navigation.vue'
 import MainSection from '../components/MainSection'
-import SectionHowItWorks from '../components/SectionHowItWorks'
-import SectionProductDescription from '../components/SectionProductDescription'
-import SectionTalkToMilla from '../components/SectionTalkToMilla'
 import SectionPartners from '../components/SectionPartners'
+import SectionProductDescription from '../components/SectionProductDescription'
+import SectionHowItWorks from '../components/SectionHowItWorks'
+import SectionPricing from '../components/SectionPricing.vue'
+import SectionTalkToMilla from '../components/SectionTalkToMilla'
 import SectionSuitcasesReady from '../components/SectionSuitcasesReady'
-import SectionFooter from '../components/SectionFooter'
 
 export default {
   name: 'Home',
@@ -27,17 +27,18 @@ export default {
     Navigation,
     MainSection,
     SectionHowItWorks,
+    SectionPricing,
     SectionProductDescription,
     SectionTalkToMilla,
     SectionPartners,
-    SectionSuitcasesReady,
-    SectionFooter
+    SectionSuitcasesReady
   }
 }
 </script>
 
 <style>
-html {
+h,
+    SectionPricingtml {
   scroll-behavior: smooth;
 }
 
