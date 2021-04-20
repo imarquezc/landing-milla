@@ -64,7 +64,7 @@ export default {
 
   methods: {
     openChat: function () {
-      window.Intercom('show')
+      window.Trengo.Api.Widget.open('chat');
     },
     closeNav() {
       this.activeNavigation = false;
