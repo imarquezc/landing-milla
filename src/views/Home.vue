@@ -5,7 +5,6 @@
     <section-partners />
     <section-product-description />
     <section-how-it-works />
-    <section-pricing />
     <section-talk-to-milla />
     <section-suitcases-ready />
   </section>
@@ -17,7 +16,6 @@ import MainSection from '../components/MainSection'
 import SectionPartners from '../components/SectionPartners'
 import SectionProductDescription from '../components/SectionProductDescription'
 import SectionHowItWorks from '../components/SectionHowItWorks'
-import SectionPricing from '../components/SectionPricing.vue'
 import SectionTalkToMilla from '../components/SectionTalkToMilla'
 import SectionSuitcasesReady from '../components/SectionSuitcasesReady'
 
@@ -27,7 +25,6 @@ export default {
     Navigation,
     MainSection,
     SectionHowItWorks,
-    SectionPricing,
     SectionProductDescription,
     SectionTalkToMilla,
     SectionPartners,
